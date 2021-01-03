@@ -15,6 +15,9 @@
 		182B975125A1A5F7005BD868 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182B974F25A1A5F7005BD868 /* LaunchScreen.storyboard */; };
 		182B975C25A1A5F8005BD868 /* CoinFlowWithMVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B975B25A1A5F8005BD868 /* CoinFlowWithMVVMTests.swift */; };
 		182B976725A1A5F8005BD868 /* CoinFlowWithMVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B976625A1A5F8005BD868 /* CoinFlowWithMVVMUITests.swift */; };
+		182B977825A1AA25005BD868 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B977725A1AA25005BD868 /* ChartViewController.swift */; };
+		182B977D25A1AA31005BD868 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B977C25A1AA31005BD868 /* NewsViewController.swift */; };
+		182B978225A1AA3F005BD868 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B978125A1AA3F005BD868 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		182B976225A1A5F8005BD868 /* CoinFlowWithMVVMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinFlowWithMVVMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		182B976625A1A5F8005BD868 /* CoinFlowWithMVVMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinFlowWithMVVMUITests.swift; sourceTree = "<group>"; };
 		182B976825A1A5F8005BD868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		182B977725A1AA25005BD868 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		182B977C25A1AA31005BD868 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		182B978125A1AA3F005BD868 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,9 @@
 				182B974D25A1A5F7005BD868 /* Assets.xcassets */,
 				182B974F25A1A5F7005BD868 /* LaunchScreen.storyboard */,
 				182B975225A1A5F7005BD868 /* Info.plist */,
+				182B977725A1AA25005BD868 /* ChartViewController.swift */,
+				182B977C25A1AA31005BD868 /* NewsViewController.swift */,
+				182B978125A1AA3F005BD868 /* SettingViewController.swift */,
 			);
 			path = CoinFlowWithMVVM;
 			sourceTree = "<group>";
@@ -259,8 +268,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				182B974925A1A5F7005BD868 /* ViewController.swift in Sources */,
+				182B977825A1AA25005BD868 /* ChartViewController.swift in Sources */,
 				182B974525A1A5F7005BD868 /* AppDelegate.swift in Sources */,
+				182B977D25A1AA31005BD868 /* NewsViewController.swift in Sources */,
 				182B974725A1A5F7005BD868 /* SceneDelegate.swift in Sources */,
+				182B978225A1AA3F005BD868 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
