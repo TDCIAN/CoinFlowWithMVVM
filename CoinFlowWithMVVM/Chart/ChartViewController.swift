@@ -27,3 +27,5 @@ class ChartViewController: UIViewController {
     */
 
 }
+
+// MARK: 1강 2시간 30분 12초까지 시청
