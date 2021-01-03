@@ -18,6 +18,7 @@
 		182B977825A1AA25005BD868 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B977725A1AA25005BD868 /* ChartViewController.swift */; };
 		182B977D25A1AA31005BD868 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B977C25A1AA31005BD868 /* NewsViewController.swift */; };
 		182B978225A1AA3F005BD868 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B978125A1AA3F005BD868 /* SettingViewController.swift */; };
+		182B978A25A1AA98005BD868 /* ChartDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B978925A1AA98005BD868 /* ChartDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		182B977725A1AA25005BD868 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		182B977C25A1AA31005BD868 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		182B978125A1AA3F005BD868 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		182B978925A1AA98005BD868 /* ChartDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,9 @@
 		182B974325A1A5F7005BD868 /* CoinFlowWithMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				182B978825A1AA6C005BD868 /* Chart */,
+				182B978725A1AA66005BD868 /* News */,
+				182B978625A1AA5F005BD868 /* Setting */,
 				182B974425A1A5F7005BD868 /* AppDelegate.swift */,
 				182B974625A1A5F7005BD868 /* SceneDelegate.swift */,
 				182B974825A1A5F7005BD868 /* ViewController.swift */,
@@ -112,9 +117,6 @@
 				182B974D25A1A5F7005BD868 /* Assets.xcassets */,
 				182B974F25A1A5F7005BD868 /* LaunchScreen.storyboard */,
 				182B975225A1A5F7005BD868 /* Info.plist */,
-				182B977725A1AA25005BD868 /* ChartViewController.swift */,
-				182B977C25A1AA31005BD868 /* NewsViewController.swift */,
-				182B978125A1AA3F005BD868 /* SettingViewController.swift */,
 			);
 			path = CoinFlowWithMVVM;
 			sourceTree = "<group>";
@@ -135,6 +137,31 @@
 				182B976825A1A5F8005BD868 /* Info.plist */,
 			);
 			path = CoinFlowWithMVVMUITests;
+			sourceTree = "<group>";
+		};
+		182B978625A1AA5F005BD868 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				182B978125A1AA3F005BD868 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		182B978725A1AA66005BD868 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				182B977C25A1AA31005BD868 /* NewsViewController.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		182B978825A1AA6C005BD868 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				182B977725A1AA25005BD868 /* ChartViewController.swift */,
+				182B978925A1AA98005BD868 /* ChartDetailViewController.swift */,
+			);
+			path = Chart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182B978A25A1AA98005BD868 /* ChartDetailViewController.swift in Sources */,
 				182B974925A1A5F7005BD868 /* ViewController.swift in Sources */,
 				182B977825A1AA25005BD868 /* ChartViewController.swift in Sources */,
 				182B974525A1A5F7005BD868 /* AppDelegate.swift in Sources */,
