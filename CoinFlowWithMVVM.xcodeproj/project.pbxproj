@@ -18,6 +18,9 @@
 		182B977D25A1AA31005BD868 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B977C25A1AA31005BD868 /* NewsViewController.swift */; };
 		182B978225A1AA3F005BD868 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B978125A1AA3F005BD868 /* SettingViewController.swift */; };
 		182B978A25A1AA98005BD868 /* ChartDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B978925A1AA98005BD868 /* ChartDetailViewController.swift */; };
+		18A4AEBB25A34B5F0098507C /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A4AEB925A34B5F0098507C /* Chart.storyboard */; };
+		18A4AEC025A34B750098507C /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A4AEBF25A34B750098507C /* News.storyboard */; };
+		18A4AEC625A34B880098507C /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A4AEC425A34B880098507C /* Setting.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		182B977C25A1AA31005BD868 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		182B978125A1AA3F005BD868 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		182B978925A1AA98005BD868 /* ChartDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDetailViewController.swift; sourceTree = "<group>"; };
+		18A4AEBA25A34B5F0098507C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CoinFlowWithMVVM/Base.lproj/Chart.storyboard; sourceTree = SOURCE_ROOT; };
+		18A4AEBF25A34B750098507C /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = SOURCE_ROOT; };
+		18A4AEC525A34B880098507C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CoinFlowWithMVVM/Base.lproj/Setting.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,7 @@
 		182B978625A1AA5F005BD868 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				18A4AEC425A34B880098507C /* Setting.storyboard */,
 				182B978125A1AA3F005BD868 /* SettingViewController.swift */,
 			);
 			path = Setting;
@@ -147,6 +154,7 @@
 		182B978725A1AA66005BD868 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				18A4AEBF25A34B750098507C /* News.storyboard */,
 				182B977C25A1AA31005BD868 /* NewsViewController.swift */,
 			);
 			path = News;
@@ -155,6 +163,7 @@
 		182B978825A1AA6C005BD868 /* Chart */ = {
 			isa = PBXGroup;
 			children = (
+				18A4AEB925A34B5F0098507C /* Chart.storyboard */,
 				182B977725A1AA25005BD868 /* ChartListViewController.swift */,
 				182B978925A1AA98005BD868 /* ChartDetailViewController.swift */,
 			);
@@ -265,8 +274,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				182B975125A1A5F7005BD868 /* LaunchScreen.storyboard in Resources */,
+				18A4AEBB25A34B5F0098507C /* Chart.storyboard in Resources */,
+				18A4AEC025A34B750098507C /* News.storyboard in Resources */,
 				182B974E25A1A5F7005BD868 /* Assets.xcassets in Resources */,
 				182B974C25A1A5F7005BD868 /* Main.storyboard in Resources */,
+				18A4AEC625A34B880098507C /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +358,22 @@
 				182B975025A1A5F7005BD868 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		18A4AEB925A34B5F0098507C /* Chart.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18A4AEBA25A34B5F0098507C /* Base */,
+			);
+			name = Chart.storyboard;
+			sourceTree = "<group>";
+		};
+		18A4AEC425A34B880098507C /* Setting.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18A4AEC525A34B880098507C /* Base */,
+			);
+			name = Setting.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
