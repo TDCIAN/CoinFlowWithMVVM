@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Chart List View Controller-->
+        <!--Chart-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ChartListViewController" customModule="CoinFlowWithMVVM" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,13 +27,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="eI2-Sf-4IT"/>
+                    <navigationItem key="navigationItem" title="Chart" id="eI2-Sf-4IT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1459.4202898550725" y="1672.7678571428571"/>
         </scene>
-        <!--News View Controller-->
+        <!--News-->
         <scene sceneID="rzy-mu-Iue">
             <objects>
                 <viewController id="BEf-Vg-aIE" customClass="NewsViewController" customModule="CoinFlowWithMVVM" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,13 +52,13 @@
                         <viewLayoutGuide key="safeArea" id="UYK-uP-C6K"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="DEP-ug-LvB"/>
+                    <navigationItem key="navigationItem" title="News" id="DEP-ug-LvB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dY-Hb-vcR" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="29" y="1673"/>
         </scene>
-        <!--Setting View Controller-->
+        <!--Setting-->
         <scene sceneID="KKO-78-D0X">
             <objects>
                 <viewController id="zzx-7k-elo" customClass="SettingViewController" customModule="CoinFlowWithMVVM" customModuleProvider="target" sceneMemberID="viewController">
@@ -77,7 +77,7 @@
                         <viewLayoutGuide key="safeArea" id="W6e-MF-d79"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lHw-jp-MqJ"/>
+                    <navigationItem key="navigationItem" title="Setting" id="lHw-jp-MqJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7w2-G8-KLO" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,8 +109,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xq9-T8-jeQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Chart" image="chart.bar.xaxis" catalog="system" id="B7a-Cu-YFY" userLabel="Chart"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Meb-Xm-K66">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Meb-Xm-K66">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -128,8 +128,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4qp-Oj-ugf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News" image="newspaper.fill" catalog="system" id="aSI-B3-h5H"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UPm-K6-3ou">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="UPm-K6-3ou">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -147,8 +147,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1zc-T8-J3U" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Setting" image="gearshape.fill" catalog="system" id="gWn-ro-y0F"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="v2Z-eV-WWY">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="v2Z-eV-WWY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
