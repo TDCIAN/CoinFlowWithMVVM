@@ -15,6 +15,15 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQf-3a-o9G">
+                                <rect key="frame" x="186" y="438" width="43" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -22,7 +31,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1459" y="1673"/>
+            <point key="canvasLocation" x="-1459.4202898550725" y="1672.7678571428571"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="rzy-mu-Iue">
@@ -31,6 +40,15 @@
                     <view key="view" contentMode="scaleToFill" id="F2e-qX-xjE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwU-H2-ntu">
+                                <rect key="frame" x="186" y="433" width="43" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="UYK-uP-C6K"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -47,6 +65,15 @@
                     <view key="view" contentMode="scaleToFill" id="27h-kA-Kua">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Setting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhj-Os-jnM">
+                                <rect key="frame" x="186" y="433" width="43" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="W6e-MF-d79"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -76,11 +103,11 @@
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="90.401785714285708"/>
         </scene>
-        <!--Item-->
+        <!--Chart-->
         <scene sceneID="G8G-Kz-DXV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xq9-T8-jeQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="B7a-Cu-YFY"/>
+                    <tabBarItem key="tabBarItem" title="Chart" image="chart.bar.xaxis" catalog="system" id="B7a-Cu-YFY" userLabel="Chart"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Meb-Xm-K66">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -95,11 +122,11 @@
             </objects>
             <point key="canvasLocation" x="-1459.4202898550725" y="911.38392857142856"/>
         </scene>
-        <!--Item-->
+        <!--News-->
         <scene sceneID="YTE-gR-OuP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4qp-Oj-ugf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="aSI-B3-h5H"/>
+                    <tabBarItem key="tabBarItem" title="News" image="newspaper.fill" catalog="system" id="aSI-B3-h5H"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UPm-K6-3ou">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -114,11 +141,11 @@
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="910.71428571428567"/>
         </scene>
-        <!--Item-->
+        <!--Setting-->
         <scene sceneID="wSC-iY-WTE">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1zc-T8-J3U" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gWn-ro-y0F"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="gearshape.fill" catalog="system" id="gWn-ro-y0F"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="v2Z-eV-WWY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -135,6 +162,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chart.bar.xaxis" catalog="system" width="128" height="98"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="newspaper.fill" catalog="system" width="128" height="111"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
