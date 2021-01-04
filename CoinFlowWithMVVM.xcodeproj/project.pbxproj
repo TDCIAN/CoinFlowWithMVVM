@@ -9,13 +9,12 @@
 /* Begin PBXBuildFile section */
 		182B974525A1A5F7005BD868 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B974425A1A5F7005BD868 /* AppDelegate.swift */; };
 		182B974725A1A5F7005BD868 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B974625A1A5F7005BD868 /* SceneDelegate.swift */; };
-		182B974925A1A5F7005BD868 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B974825A1A5F7005BD868 /* ViewController.swift */; };
 		182B974C25A1A5F7005BD868 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182B974A25A1A5F7005BD868 /* Main.storyboard */; };
 		182B974E25A1A5F7005BD868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182B974D25A1A5F7005BD868 /* Assets.xcassets */; };
 		182B975125A1A5F7005BD868 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182B974F25A1A5F7005BD868 /* LaunchScreen.storyboard */; };
 		182B975C25A1A5F8005BD868 /* CoinFlowWithMVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B975B25A1A5F8005BD868 /* CoinFlowWithMVVMTests.swift */; };
 		182B976725A1A5F8005BD868 /* CoinFlowWithMVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B976625A1A5F8005BD868 /* CoinFlowWithMVVMUITests.swift */; };
-		182B977825A1AA25005BD868 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B977725A1AA25005BD868 /* ChartViewController.swift */; };
+		182B977825A1AA25005BD868 /* ChartListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B977725A1AA25005BD868 /* ChartListViewController.swift */; };
 		182B977D25A1AA31005BD868 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B977C25A1AA31005BD868 /* NewsViewController.swift */; };
 		182B978225A1AA3F005BD868 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B978125A1AA3F005BD868 /* SettingViewController.swift */; };
 		182B978A25A1AA98005BD868 /* ChartDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B978925A1AA98005BD868 /* ChartDetailViewController.swift */; };
@@ -42,7 +41,6 @@
 		182B974125A1A5F7005BD868 /* CoinFlowWithMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinFlowWithMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182B974425A1A5F7005BD868 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		182B974625A1A5F7005BD868 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		182B974825A1A5F7005BD868 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		182B974B25A1A5F7005BD868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		182B974D25A1A5F7005BD868 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		182B975025A1A5F7005BD868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,7 +51,7 @@
 		182B976225A1A5F8005BD868 /* CoinFlowWithMVVMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinFlowWithMVVMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		182B976625A1A5F8005BD868 /* CoinFlowWithMVVMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinFlowWithMVVMUITests.swift; sourceTree = "<group>"; };
 		182B976825A1A5F8005BD868 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		182B977725A1AA25005BD868 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		182B977725A1AA25005BD868 /* ChartListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartListViewController.swift; sourceTree = "<group>"; };
 		182B977C25A1AA31005BD868 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		182B978125A1AA3F005BD868 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		182B978925A1AA98005BD868 /* ChartDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDetailViewController.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 				182B978625A1AA5F005BD868 /* Setting */,
 				182B974425A1A5F7005BD868 /* AppDelegate.swift */,
 				182B974625A1A5F7005BD868 /* SceneDelegate.swift */,
-				182B974825A1A5F7005BD868 /* ViewController.swift */,
 				182B974A25A1A5F7005BD868 /* Main.storyboard */,
 				182B974D25A1A5F7005BD868 /* Assets.xcassets */,
 				182B974F25A1A5F7005BD868 /* LaunchScreen.storyboard */,
@@ -158,7 +155,7 @@
 		182B978825A1AA6C005BD868 /* Chart */ = {
 			isa = PBXGroup;
 			children = (
-				182B977725A1AA25005BD868 /* ChartViewController.swift */,
+				182B977725A1AA25005BD868 /* ChartListViewController.swift */,
 				182B978925A1AA98005BD868 /* ChartDetailViewController.swift */,
 			);
 			path = Chart;
@@ -295,8 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				182B978A25A1AA98005BD868 /* ChartDetailViewController.swift in Sources */,
-				182B974925A1A5F7005BD868 /* ViewController.swift in Sources */,
-				182B977825A1AA25005BD868 /* ChartViewController.swift in Sources */,
+				182B977825A1AA25005BD868 /* ChartListViewController.swift in Sources */,
 				182B974525A1A5F7005BD868 /* AppDelegate.swift in Sources */,
 				182B977D25A1AA31005BD868 /* NewsViewController.swift in Sources */,
 				182B974725A1A5F7005BD868 /* SceneDelegate.swift in Sources */,

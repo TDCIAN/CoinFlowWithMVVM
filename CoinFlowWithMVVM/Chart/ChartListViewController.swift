@@ -1,5 +1,5 @@
 //
-//  ChartViewController.swift
+//  ChartListViewController.swift
 //  CoinFlowWithMVVM
 //
 //  Created by APPLE on 2021/01/03.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChartViewController: UIViewController {
+class ChartListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
