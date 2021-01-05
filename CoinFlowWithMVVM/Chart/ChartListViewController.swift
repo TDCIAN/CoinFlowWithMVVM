@@ -16,12 +16,10 @@ class ChartListViewController: UIViewController {
     }
     
 
-    @IBAction func buttonTapped(_ sender: UIButton) {
-        
+    private func showDetail() {
         let storyboard = UIStoryboard(name: "Chart", bundle: .main)
         let chartDetailViewController = storyboard.instantiateViewController(withIdentifier: "ChartDetailViewController")
         
         navigationController?.pushViewController(chartDetailViewController, animated: true)
     }
-    
 }
