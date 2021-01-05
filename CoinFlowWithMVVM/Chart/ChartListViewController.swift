@@ -26,12 +26,21 @@ class ChartListViewController: UIViewController {
 
 extension ChartListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChartCardCell", for: indexPath) as? ChartCardCell
+        else {
+            return UICollectionViewCell()
+        }
+        cell.backgroundColor = .systemRed
+        return cell
     }
-    
+
+}
+
+class ChartCardCell: UICollectionViewCell {
     
 }
