@@ -23,3 +23,15 @@ class ChartListViewController: UIViewController {
         navigationController?.pushViewController(chartDetailViewController, animated: true)
     }
 }
+
+extension ChartListViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+    
+    
+}
