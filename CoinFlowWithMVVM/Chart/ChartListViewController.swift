@@ -41,6 +41,17 @@ extension ChartListViewController: UICollectionViewDataSource {
 
 }
 
+extension ChartListViewController: UICollectionViewDelegateFlowLayout {
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: 200, height: 200)
+        
+    }
+    
+}
+
 class ChartCardCell: UICollectionViewCell {
     
 }
