@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Setting View Controller-->
+        <!--Setting-->
         <scene sceneID="m69-yD-caA">
             <objects>
                 <tableViewController id="zXK-kH-6ON" customClass="SettingViewController" customModule="CoinFlowWithMVVM" customModuleProvider="target" sceneMemberID="viewController">
@@ -110,7 +110,7 @@
                             <outlet property="delegate" destination="zXK-kH-6ON" id="24o-iF-atl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="xmm-dJ-pgC"/>
+                    <navigationItem key="navigationItem" title="Setting" id="xmm-dJ-pgC"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWU-a3-iEd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
