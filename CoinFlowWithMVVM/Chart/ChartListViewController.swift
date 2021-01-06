@@ -24,6 +24,8 @@ class ChartListViewController: UIViewController {
     }
 }
 
+
+// MARK: - CollectionView
 extension ChartListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
@@ -35,7 +37,7 @@ extension ChartListViewController: UICollectionViewDataSource {
         else {
             return UICollectionViewCell()
         }
-        cell.backgroundColor = .systemRed
+        cell.backgroundColor = UIColor.randomColor()
         return cell
     }
 
@@ -56,5 +58,26 @@ extension ChartListViewController: UICollectionViewDelegateFlowLayout {
 }
 
 class ChartCardCell: UICollectionViewCell {
+    
+}
+
+// MARK: - CollectionView
+extension ChartListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 15
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChartListCell", for: indexPath) as? ChartListCell else {
+            return UITableViewCell()
+        }
+        cell.backgroundColor = UIColor.randomColor()
+        return cell
+    }
+    
+    
+}
+
+class ChartListCell: UITableViewCell {
     
 }
