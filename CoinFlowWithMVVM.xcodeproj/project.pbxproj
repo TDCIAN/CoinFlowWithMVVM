@@ -21,6 +21,7 @@
 		18A4AEBB25A34B5F0098507C /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A4AEB925A34B5F0098507C /* Chart.storyboard */; };
 		18A4AEC025A34B750098507C /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A4AEBF25A34B750098507C /* News.storyboard */; };
 		18A4AEC625A34B880098507C /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A4AEC425A34B880098507C /* Setting.storyboard */; };
+		18DCBC1C25A5ED1B00F11E10 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCBC1B25A5ED1B00F11E10 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		18A4AEBA25A34B5F0098507C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CoinFlowWithMVVM/Base.lproj/Chart.storyboard; sourceTree = SOURCE_ROOT; };
 		18A4AEBF25A34B750098507C /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = SOURCE_ROOT; };
 		18A4AEC525A34B880098507C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CoinFlowWithMVVM/Base.lproj/Setting.storyboard; sourceTree = SOURCE_ROOT; };
+		18DCBC1B25A5ED1B00F11E10 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		182B974325A1A5F7005BD868 /* CoinFlowWithMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				18DCBC1A25A5ED0800F11E10 /* Extension */,
 				182B978825A1AA6C005BD868 /* Chart */,
 				182B978725A1AA66005BD868 /* News */,
 				182B978625A1AA5F005BD868 /* Setting */,
@@ -168,6 +171,14 @@
 				182B978925A1AA98005BD868 /* ChartDetailViewController.swift */,
 			);
 			path = Chart;
+			sourceTree = "<group>";
+		};
+		18DCBC1A25A5ED0800F11E10 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				18DCBC1B25A5ED1B00F11E10 /* UIColor.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				182B978A25A1AA98005BD868 /* ChartDetailViewController.swift in Sources */,
+				18DCBC1C25A5ED1B00F11E10 /* UIColor.swift in Sources */,
 				182B977825A1AA25005BD868 /* ChartListViewController.swift in Sources */,
 				182B974525A1A5F7005BD868 /* AppDelegate.swift in Sources */,
 				182B977D25A1AA31005BD868 /* NewsViewController.swift in Sources */,
