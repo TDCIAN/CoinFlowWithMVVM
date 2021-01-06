@@ -9,12 +9,28 @@ import UIKit
 
 class ChartListViewController: UIViewController {
 
+    @IBOutlet weak var chartCollectionView: UICollectionView!
+    
+    @IBOutlet weak var chartTableView: UITableView!
+    
+    @IBOutlet weak var chartTableViewHeight: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // 이 시점에 contentSize 파악 후 tableView의 높이를 조정
+        print(chartTableView.contentSize.height)
+    }
 
     private func showDetail() {
         let storyboard = UIStoryboard(name: "Chart", bundle: .main)
