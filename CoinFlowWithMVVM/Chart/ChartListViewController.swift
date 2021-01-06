@@ -10,9 +10,7 @@ import UIKit
 class ChartListViewController: UIViewController {
 
     @IBOutlet weak var chartCollectionView: UICollectionView!
-    
     @IBOutlet weak var chartTableView: UITableView!
-    
     @IBOutlet weak var chartTableViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
@@ -28,10 +26,17 @@ class ChartListViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        // 이 시점에 contentSize 파악 후 tableView의 높이를 조정
-        print(chartTableView.contentSize.height)
+        adjustTableViewHeight()
     }
+}
 
+// MARK: - Private Method
+extension ChartListViewController {
+    
+    private func adjustTableViewHeight() {
+        chartTableViewHeight.constant = chartTableView.contentSize.height
+    }
+    
     private func showDetail() {
         let storyboard = UIStoryboard(name: "Chart", bundle: .main)
         let chartDetailViewController = storyboard.instantiateViewController(withIdentifier: "ChartDetailViewController")
@@ -39,7 +44,6 @@ class ChartListViewController: UIViewController {
         navigationController?.pushViewController(chartDetailViewController, animated: true)
     }
 }
-
 
 // MARK: - CollectionView
 extension ChartListViewController: UICollectionViewDataSource {
@@ -77,7 +81,7 @@ class ChartCardCell: UICollectionViewCell {
     
 }
 
-// MARK: - CollectionView
+// MARK: - TableView
 extension ChartListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 15
