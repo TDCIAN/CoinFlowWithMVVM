@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4qp-Oj-ugf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,19 +13,22 @@
             <objects>
                 <viewController id="BEf-Vg-aIE" customClass="NewsViewController" customModule="CoinFlowWithMVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F2e-qX-xjE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pwU-H2-ntu">
-                                <rect key="frame" x="186" y="433" width="43" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cbl-Ch-wzp">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UYK-uP-C6K"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Cbl-Ch-wzp" firstAttribute="top" secondItem="UYK-uP-C6K" secondAttribute="top" id="Smt-Uk-ZZN"/>
+                            <constraint firstItem="UYK-uP-C6K" firstAttribute="trailing" secondItem="Cbl-Ch-wzp" secondAttribute="trailing" id="a74-CI-1nJ"/>
+                            <constraint firstItem="Cbl-Ch-wzp" firstAttribute="leading" secondItem="UYK-uP-C6K" secondAttribute="leading" id="jsc-Ph-Xwn"/>
+                            <constraint firstItem="UYK-uP-C6K" firstAttribute="bottom" secondItem="Cbl-Ch-wzp" secondAttribute="bottom" id="u38-23-MvG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="News" id="DEP-ug-LvB"/>
                 </viewController>
