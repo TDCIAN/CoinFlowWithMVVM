@@ -84,7 +84,7 @@ class ChartCardCell: UICollectionViewCell {
 // MARK: - TableView
 extension ChartListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return 18
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
