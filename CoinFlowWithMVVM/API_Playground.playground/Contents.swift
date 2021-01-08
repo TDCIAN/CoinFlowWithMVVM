@@ -64,9 +64,11 @@ struct CoinListResponse: Codable {
 
 struct RawData: Codable {
     let btc: Coin
+    let eth: Coin
     
     enum CodingKeys: String, CodingKey {
         case btc = "BTC"
+        case eth = "ETH"
     }
 }
 
@@ -106,11 +108,11 @@ let taskWithCoinListURL = urlSession.dataTask(with: coinListURL) { (data, respon
     // 문제가 없는쪽
     guard let responseData = data else { return }
     let string = String(data: responseData, encoding: .utf8)
-    print("코인리스트 -> :\(string)")
+//    print("코인리스트 -> :\(string)")
     let decoder = JSONDecoder()
     do {
-//        let response = try decoder.decode([NewsResponse].self, from: responseData)
-//        print("--> coinList success: \(response)")
+        let response = try decoder.decode(CoinListResponse.self, from: responseData)
+//        print("--> coinList success: \(response.raw.eth)")
     } catch {
         print("--> coinList err: \(error.localizedDescription)")
     }
@@ -118,3 +120,52 @@ let taskWithCoinListURL = urlSession.dataTask(with: coinListURL) { (data, respon
 }
 
 taskWithCoinListURL.resume()
+
+
+struct StockDataResponse: Codable {
+    let metaData: MetaData
+    
+    enum CodingKeys: String, CodingKey {
+        case metaData = "Meta Data"
+    }
+}
+
+struct MetaData: Codable {
+    let information: String
+    let symbol: String
+    let lastRefreshed: String
+    let outputSize: String
+    let timeZone: String
+    
+    enum CodingKeys: String, CodingKey {
+        case information = "1. Information"
+        case symbol = "2. Symbol"
+        case lastRefreshed = "3. Last Refreshed"
+        case outputSize = "4. Output Size"
+        case timeZone = "5. Time Zone"
+    }
+}
+
+let stockDataURL = URL(string: "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo")!
+
+let taskWithStockURL = urlSession.dataTask(with: stockDataURL) { (data, response, error) in
+    let successRange = 200..<300
+    
+    guard error == nil,
+          let statusCode = (response as? HTTPURLResponse)?.statusCode,
+          successRange.contains(statusCode) else {
+        return
+    }
+    
+    guard let responseData = data else { return }
+    let string = String(data: responseData, encoding: .utf8)
+//    print("주식 스트링: \(string)")
+    let decoder = JSONDecoder()
+    do {
+        let response = try decoder.decode(StockDataResponse.self, from: responseData)
+        print("주식 리스트 석세스: \(response.metaData)")
+    } catch {
+        print("주식 리스트 에러: \(error.localizedDescription)")
+    }
+}
+taskWithStockURL.resume()
