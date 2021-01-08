@@ -54,6 +54,44 @@ taskWithNewsURL.resume()
 //https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,DASH,LTC,ETC,XRP,BCH,XMR,QTUM,ZEC,BTG&tsyms=USD
 //https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH&tsyms=USD
 
+struct CoinListResponse: Codable {
+    let raw: RawData
+    
+    enum CodingKeys: String, CodingKey {
+        case raw = "RAW"
+    }
+}
+
+struct RawData: Codable {
+    let btc: Coin
+    
+    enum CodingKeys: String, CodingKey {
+        case btc = "BTC"
+    }
+}
+
+struct Coin: Codable {
+    let usd: CurrencyInfo
+    
+    enum CodingKeys: String, CodingKey {
+        case usd = "USD"
+    }
+}
+
+struct CurrencyInfo: Codable {
+    let price: Double
+    let changeLast24H: Double
+    let changePercentLast24H: Double
+    let market: String
+    
+    enum CodingKeys: String, CodingKey {
+        case price = "PRICE"
+        case changeLast24H = "CHANGE24HOUR"
+        case changePercentLast24H = "CHANGEPCT24HOUR"
+        case market = "LASTMARKET"
+    }
+}
+
 let coinListURL = URL(string: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH&tsyms=USD")!
 
 let taskWithCoinListURL = urlSession.dataTask(with: coinListURL) { (data, response, error) in
