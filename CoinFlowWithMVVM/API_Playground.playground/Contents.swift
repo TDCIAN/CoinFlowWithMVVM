@@ -124,11 +124,11 @@ taskWithCoinListURL.resume()
 
 struct StockDataResponse: Codable {
     let metaData: MetaData
-    let timeSeries: TimeSeries
+//    let timeSeries: TimeSeries
     
     enum CodingKeys: String, CodingKey {
         case metaData = "Meta Data"
-        case timeSeries = "Time Series (Daily)"
+//        case timeSeries = "Time Series (Daily)"
     }
 }
 
@@ -148,14 +148,14 @@ struct MetaData: Codable {
     }
 }
 
-struct TimeSeries: Codable {
-
-    let priceForDate: String
-    
-    enum CodingKeys: String, CodingKey {
-        case priceForDate = "2021-01-08"
-    }
-}
+//struct TimeSeries: Codable {
+//
+//    let priceForDate: String
+//
+//    enum CodingKeys: String, CodingKey {
+//        case priceForDate = "2021-01-08"
+//    }
+//}
 
 let stockDataURL = URL(string: "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo")!
 
@@ -174,7 +174,7 @@ let taskWithStockURL = urlSession.dataTask(with: stockDataURL) { (data, response
     let decoder = JSONDecoder()
     do {
         let response = try decoder.decode(StockDataResponse.self, from: responseData)
-        print("주식 리스트 석세스: \(response.timeSeries)")
+        print("주식 리스트 석세스: \(response.metaData)")
     } catch {
         print("주식 리스트 에러: \(error.localizedDescription)")
     }
