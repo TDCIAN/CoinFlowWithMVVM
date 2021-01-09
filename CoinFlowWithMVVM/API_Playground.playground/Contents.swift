@@ -124,9 +124,11 @@ taskWithCoinListURL.resume()
 
 struct StockDataResponse: Codable {
     let metaData: MetaData
+    let timeSeries: TimeSeries
     
     enum CodingKeys: String, CodingKey {
         case metaData = "Meta Data"
+        case timeSeries = "Time Series (Daily)"
     }
 }
 
@@ -143,6 +145,16 @@ struct MetaData: Codable {
         case lastRefreshed = "3. Last Refreshed"
         case outputSize = "4. Output Size"
         case timeZone = "5. Time Zone"
+    }
+}
+
+struct TimeSeries: Codable {
+
+    let priceForDate: [PriceForDate]
+    
+    enum CodingKeys: String, CodingKey {
+        
+        case priceForDate = dateString
     }
 }
 
