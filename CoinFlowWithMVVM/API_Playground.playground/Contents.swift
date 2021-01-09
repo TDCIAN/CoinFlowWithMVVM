@@ -150,11 +150,10 @@ struct MetaData: Codable {
 
 struct TimeSeries: Codable {
 
-    let priceForDate: [PriceForDate]
+    let priceForDate: String
     
     enum CodingKeys: String, CodingKey {
-        
-        case priceForDate = dateString
+        case priceForDate = "2021-01-08"
     }
 }
 
@@ -175,7 +174,7 @@ let taskWithStockURL = urlSession.dataTask(with: stockDataURL) { (data, response
     let decoder = JSONDecoder()
     do {
         let response = try decoder.decode(StockDataResponse.self, from: responseData)
-        print("주식 리스트 석세스: \(response.metaData)")
+        print("주식 리스트 석세스: \(response.timeSeries)")
     } catch {
         print("주식 리스트 에러: \(error.localizedDescription)")
     }
