@@ -18,6 +18,9 @@
 		182B977D25A1AA31005BD868 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B977C25A1AA31005BD868 /* NewsViewController.swift */; };
 		182B978225A1AA3F005BD868 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B978125A1AA3F005BD868 /* SettingViewController.swift */; };
 		182B978A25A1AA98005BD868 /* ChartDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B978925A1AA98005BD868 /* ChartDetailViewController.swift */; };
+		183C9F4525ACB0560055F6A2 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C9F4425ACB0560055F6A2 /* Article.swift */; };
+		183C9F4B25ACB0660055F6A2 /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C9F4A25ACB0660055F6A2 /* ChartData.swift */; };
+		183C9F5025ACB06C0055F6A2 /* CoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C9F4F25ACB06C0055F6A2 /* CoinData.swift */; };
 		18A4AEBB25A34B5F0098507C /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A4AEB925A34B5F0098507C /* Chart.storyboard */; };
 		18A4AEC025A34B750098507C /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A4AEBF25A34B750098507C /* News.storyboard */; };
 		18A4AEC625A34B880098507C /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A4AEC425A34B880098507C /* Setting.storyboard */; };
@@ -60,6 +63,9 @@
 		182B977C25A1AA31005BD868 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		182B978125A1AA3F005BD868 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		182B978925A1AA98005BD868 /* ChartDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDetailViewController.swift; sourceTree = "<group>"; };
+		183C9F4425ACB0560055F6A2 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		183C9F4A25ACB0660055F6A2 /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
+		183C9F4F25ACB06C0055F6A2 /* CoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinData.swift; sourceTree = "<group>"; };
 		18A4AEBA25A34B5F0098507C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CoinFlowWithMVVM/Base.lproj/Chart.storyboard; sourceTree = SOURCE_ROOT; };
 		18A4AEBF25A34B750098507C /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = SOURCE_ROOT; };
 		18A4AEC525A34B880098507C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CoinFlowWithMVVM/Base.lproj/Setting.storyboard; sourceTree = SOURCE_ROOT; };
@@ -114,6 +120,7 @@
 		182B974325A1A5F7005BD868 /* CoinFlowWithMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				183C9F4925ACB05B0055F6A2 /* Model */,
 				18DCBC1A25A5ED0800F11E10 /* Extension */,
 				182B978825A1AA6C005BD868 /* Chart */,
 				182B978725A1AA66005BD868 /* News */,
@@ -173,6 +180,16 @@
 				182B978925A1AA98005BD868 /* ChartDetailViewController.swift */,
 			);
 			path = Chart;
+			sourceTree = "<group>";
+		};
+		183C9F4925ACB05B0055F6A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				183C9F4425ACB0560055F6A2 /* Article.swift */,
+				183C9F4A25ACB0660055F6A2 /* ChartData.swift */,
+				183C9F4F25ACB06C0055F6A2 /* CoinData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		18DCBC1A25A5ED0800F11E10 /* Extension */ = {
@@ -318,8 +335,11 @@
 			files = (
 				182B978A25A1AA98005BD868 /* ChartDetailViewController.swift in Sources */,
 				18DCBC1C25A5ED1B00F11E10 /* UIColor.swift in Sources */,
+				183C9F5025ACB06C0055F6A2 /* CoinData.swift in Sources */,
 				182B977825A1AA25005BD868 /* ChartListViewController.swift in Sources */,
 				182B974525A1A5F7005BD868 /* AppDelegate.swift in Sources */,
+				183C9F4B25ACB0660055F6A2 /* ChartData.swift in Sources */,
+				183C9F4525ACB0560055F6A2 /* Article.swift in Sources */,
 				182B977D25A1AA31005BD868 /* NewsViewController.swift in Sources */,
 				182B974725A1A5F7005BD868 /* SceneDelegate.swift in Sources */,
 				182B978225A1AA3F005BD868 /* SettingViewController.swift in Sources */,
