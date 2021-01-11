@@ -24,7 +24,7 @@ struct RawData: Codable {
     let etc: Coin
     let xrp: Coin
     let bch: Coin
-    let xmr: Coint
+    let xmr: Coin
     let qtum: Coin
     let zec: Coin
     let btg: Coin
@@ -41,7 +41,7 @@ struct RawData: Codable {
         case xmr = "XMR"
         case qtum = "QTUM"
         case zec = "ZEC"
-        case bth = "BTG"
+        case btg = "BTG"
     }
 }
 
