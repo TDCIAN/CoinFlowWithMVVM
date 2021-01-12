@@ -45,6 +45,12 @@ struct RawData: Codable {
     }
 }
 
+extension RawData {
+    func allCoins() -> [Coin] {
+        return [btc, eth, dash, ltc, xrp, bch, xmr, qtum, zec, btg]
+    }
+}
+
 struct Coin: Codable {
     let usd: CurrencyInfo
     

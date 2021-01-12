@@ -11,7 +11,7 @@ class NetworkManager {
     
     static let session = URLSession.shared
     
-    static func requestCoinList(completion: ([Coin]) -> Void) {
+    static func requestCoinList(completion: @escaping ([Coin]) -> Void) {
         let coinListURL = URL(string: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,DASH,LTC,ETC,XRP,BCH,XMR,QTUM,ZEC,BTG&tsyms=USD")!
         let taskWithCoinListURL = session.dataTask(with: coinListURL) { (data, response, error) in
             let successRange = 200..<300
@@ -27,6 +27,8 @@ class NetworkManager {
             do {
                 let response = try decoder.decode(CoinListResponse.self, from: responseData)
                 print("--> coinList Success: \(response.raw.btg)")
+                let coinList = response.raw.allCoins()
+                completion(coinList)
             } catch {
                 print("--> CoinList Err: \(error.localizedDescription)")
             }
