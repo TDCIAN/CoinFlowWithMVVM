@@ -21,6 +21,14 @@ class ChartListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        NetworkManager.requestCoinList { coinList in
+            print("코인리스트 --> \(coinList.count)")
+        }
+        
+        NetworkManager.requestCoinChartData { chartDatas in
+            print("차트데이터 --> \(chartDatas.count)")
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

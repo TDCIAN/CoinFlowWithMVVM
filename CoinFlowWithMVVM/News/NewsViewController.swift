@@ -14,7 +14,13 @@ class NewsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NetworkManager.requestNewsList { articles in
+            print("뉴스리스트 --> \(articles.count)")
+        }
+    }
 }
 
 extension NewsViewController: UITableViewDataSource {
