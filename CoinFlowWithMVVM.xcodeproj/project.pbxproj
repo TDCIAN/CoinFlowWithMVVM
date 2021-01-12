@@ -26,6 +26,8 @@
 		18A4AEC025A34B750098507C /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A4AEBF25A34B750098507C /* News.storyboard */; };
 		18A4AEC625A34B880098507C /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A4AEC425A34B880098507C /* Setting.storyboard */; };
 		18DCBC1C25A5ED1B00F11E10 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCBC1B25A5ED1B00F11E10 /* UIColor.swift */; };
+		18EA68BD25ADFB6A00F24759 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA68BC25ADFB6A00F24759 /* EndPoint.swift */; };
+		18EA68C225ADFB7900F24759 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA68C125ADFB7900F24759 /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		18A4AEBF25A34B750098507C /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = SOURCE_ROOT; };
 		18A4AEC525A34B880098507C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CoinFlowWithMVVM/Base.lproj/Setting.storyboard; sourceTree = SOURCE_ROOT; };
 		18DCBC1B25A5ED1B00F11E10 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		18EA68BC25ADFB6A00F24759 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		18EA68C125ADFB7900F24759 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				183C9F5525ACB3650055F6A2 /* NetworkManager.swift */,
+				18EA68BC25ADFB6A00F24759 /* EndPoint.swift */,
+				18EA68C125ADFB7900F24759 /* Request.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -345,11 +351,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				182B978A25A1AA98005BD868 /* ChartDetailViewController.swift in Sources */,
+				18EA68C225ADFB7900F24759 /* Request.swift in Sources */,
 				18DCBC1C25A5ED1B00F11E10 /* UIColor.swift in Sources */,
 				183C9F5025ACB06C0055F6A2 /* CoinData.swift in Sources */,
 				182B977825A1AA25005BD868 /* ChartListViewController.swift in Sources */,
 				183C9F5625ACB3650055F6A2 /* NetworkManager.swift in Sources */,
 				182B974525A1A5F7005BD868 /* AppDelegate.swift in Sources */,
+				18EA68BD25ADFB6A00F24759 /* EndPoint.swift in Sources */,
 				183C9F4B25ACB0660055F6A2 /* ChartData.swift in Sources */,
 				183C9F4525ACB0560055F6A2 /* Article.swift in Sources */,
 				182B977D25A1AA31005BD868 /* NewsViewController.swift in Sources */,
