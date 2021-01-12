@@ -31,6 +31,7 @@
 		18EA68C725ADFFDA00F24759 /* CoinListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA68C625ADFFDA00F24759 /* CoinListRequest.swift */; };
 		18EA68CC25AE00CB00F24759 /* CoinChartDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA68CB25AE00CB00F24759 /* CoinChartDataRequest.swift */; };
 		18EA68D125AE011400F24759 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA68D025AE011400F24759 /* Period.swift */; };
+		18EA68D625AE02F000F24759 /* NewsListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA68D525AE02F000F24759 /* NewsListRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		18EA68C625ADFFDA00F24759 /* CoinListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListRequest.swift; sourceTree = "<group>"; };
 		18EA68CB25AE00CB00F24759 /* CoinChartDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinChartDataRequest.swift; sourceTree = "<group>"; };
 		18EA68D025AE011400F24759 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
+		18EA68D525AE02F000F24759 /* NewsListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 				18EA68C125ADFB7900F24759 /* Request.swift */,
 				18EA68C625ADFFDA00F24759 /* CoinListRequest.swift */,
 				18EA68CB25AE00CB00F24759 /* CoinChartDataRequest.swift */,
+				18EA68D525AE02F000F24759 /* NewsListRequest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				183C9F4525ACB0560055F6A2 /* Article.swift in Sources */,
 				182B977D25A1AA31005BD868 /* NewsViewController.swift in Sources */,
 				182B974725A1A5F7005BD868 /* SceneDelegate.swift in Sources */,
+				18EA68D625AE02F000F24759 /* NewsListRequest.swift in Sources */,
 				18EA68C725ADFFDA00F24759 /* CoinListRequest.swift in Sources */,
 				182B978225A1AA3F005BD868 /* SettingViewController.swift in Sources */,
 			);
