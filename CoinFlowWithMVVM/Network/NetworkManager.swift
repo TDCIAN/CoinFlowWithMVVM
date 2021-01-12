@@ -76,6 +76,8 @@ class NetworkManager {
             let decoder = JSONDecoder()
             do {
                 let response = try decoder.decode([NewsResponse].self, from: responseData)
+                let articles = response.flatMap { $0.articleArray }
+                completion(articles)
             } catch {
                 print("--> NewsList Error: \(error.localizedDescription)")
             }
