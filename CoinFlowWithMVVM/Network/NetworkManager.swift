@@ -122,7 +122,7 @@ extension NetworkManager {
         let param: RequestParam = .url(["fsym":"BTC", "tsym":"USD", "limit":"24"])
         guard let url = CoinChartDataRequest(period: .day, param: param).urlRequest().url else { return }
         
-//        let coinChartDataURL = URL(string: "https://min-api.cryptocompare.com/data/histohour?fsym=BTC&tsym=USD&limit=24")!
+        let coinChartDataURL = URL(string: "https://min-api.cryptocompare.com/data/histohour?fsym=BTC&tsym=USD&limit=24")!
         let taskWithCoinChartDataURL = session.dataTask(with: url) { (data, response, error) in
             let successRange = 200..<300
             guard error == nil,
@@ -145,8 +145,9 @@ extension NetworkManager {
     }
     
     static func requestNewsList(completion: @escaping ([Article]) -> Void) {
-        let newsURL = URL(string: "http://coinbelly.com/api/get_rss")!
-        let taskWithNewsURL = session.dataTask(with: newsURL) { (data, response, error) in
+        guard let url = NewsListRequest().urlRequest().url else { return }
+//        let newsURL = URL(string: "http://coinbelly.com/api/get_rss")!
+        let taskWithNewsURL = session.dataTask(with: url) { (data, response, error) in
             let successRange = 200..<300
             
             guard error == nil,
