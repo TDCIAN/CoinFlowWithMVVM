@@ -11,7 +11,7 @@ class NetworkManager {
     
     static let session = URLSession.shared
     
-    static func requestCoinList() {
+    static func requestCoinList(completion: ([Coin]) -> Void) {
         let coinListURL = URL(string: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,DASH,LTC,ETC,XRP,BCH,XMR,QTUM,ZEC,BTG&tsyms=USD")!
         let taskWithCoinListURL = session.dataTask(with: coinListURL) { (data, response, error) in
             let successRange = 200..<300
@@ -35,7 +35,7 @@ class NetworkManager {
         taskWithCoinListURL.resume()        
     }
 
-    static func requestCoinChartData() {
+    static func requestCoinChartData(completion: ([ChartData]) -> Void) {
         let coinChartDataURL = URL(string: "https://min-api.cryptocompare.com/data/histohour?fsym=BTC&tsym=USD&limit=24")!
         let taskWithCoinChartDataURL = session.dataTask(with: coinChartDataURL) { (data, response, error) in
             let successRange = 200..<300
@@ -56,7 +56,7 @@ class NetworkManager {
         taskWithCoinChartDataURL.resume()
     }
     
-    static func requestNewsList() {
+    static func requestNewsList(completion: ([Article]) -> Void) {
         let newsURL = URL(string: "http://coinbelly.com/api/get_rss")!
         let taskWithNewsURL = session.dataTask(with: newsURL) { (data, response, error) in
             let successRange = 200..<300
