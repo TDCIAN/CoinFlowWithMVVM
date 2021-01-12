@@ -29,7 +29,7 @@ protocol Request {
     var method: HTTPMethod { get }
     var params: RequestParam { get}
     var format: String? { get }
-    var header: [String]? { get }
+    var headers: [String]? { get }
 }
 
 extension Request {

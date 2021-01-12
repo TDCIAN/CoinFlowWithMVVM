@@ -28,6 +28,9 @@
 		18DCBC1C25A5ED1B00F11E10 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCBC1B25A5ED1B00F11E10 /* UIColor.swift */; };
 		18EA68BD25ADFB6A00F24759 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA68BC25ADFB6A00F24759 /* EndPoint.swift */; };
 		18EA68C225ADFB7900F24759 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA68C125ADFB7900F24759 /* Request.swift */; };
+		18EA68C725ADFFDA00F24759 /* CoinListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA68C625ADFFDA00F24759 /* CoinListRequest.swift */; };
+		18EA68CC25AE00CB00F24759 /* CoinChartDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA68CB25AE00CB00F24759 /* CoinChartDataRequest.swift */; };
+		18EA68D125AE011400F24759 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA68D025AE011400F24759 /* Period.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +79,9 @@
 		18DCBC1B25A5ED1B00F11E10 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		18EA68BC25ADFB6A00F24759 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		18EA68C125ADFB7900F24759 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		18EA68C625ADFFDA00F24759 /* CoinListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListRequest.swift; sourceTree = "<group>"; };
+		18EA68CB25AE00CB00F24759 /* CoinChartDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinChartDataRequest.swift; sourceTree = "<group>"; };
+		18EA68D025AE011400F24759 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +201,7 @@
 				183C9F4425ACB0560055F6A2 /* Article.swift */,
 				183C9F4A25ACB0660055F6A2 /* ChartData.swift */,
 				183C9F4F25ACB06C0055F6A2 /* CoinData.swift */,
+				18EA68D025AE011400F24759 /* Period.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +212,8 @@
 				183C9F5525ACB3650055F6A2 /* NetworkManager.swift */,
 				18EA68BC25ADFB6A00F24759 /* EndPoint.swift */,
 				18EA68C125ADFB7900F24759 /* Request.swift */,
+				18EA68C625ADFFDA00F24759 /* CoinListRequest.swift */,
+				18EA68CB25AE00CB00F24759 /* CoinChartDataRequest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -355,13 +364,16 @@
 				18DCBC1C25A5ED1B00F11E10 /* UIColor.swift in Sources */,
 				183C9F5025ACB06C0055F6A2 /* CoinData.swift in Sources */,
 				182B977825A1AA25005BD868 /* ChartListViewController.swift in Sources */,
+				18EA68CC25AE00CB00F24759 /* CoinChartDataRequest.swift in Sources */,
 				183C9F5625ACB3650055F6A2 /* NetworkManager.swift in Sources */,
 				182B974525A1A5F7005BD868 /* AppDelegate.swift in Sources */,
 				18EA68BD25ADFB6A00F24759 /* EndPoint.swift in Sources */,
 				183C9F4B25ACB0660055F6A2 /* ChartData.swift in Sources */,
+				18EA68D125AE011400F24759 /* Period.swift in Sources */,
 				183C9F4525ACB0560055F6A2 /* Article.swift in Sources */,
 				182B977D25A1AA31005BD868 /* NewsViewController.swift in Sources */,
 				182B974725A1A5F7005BD868 /* SceneDelegate.swift in Sources */,
+				18EA68C725ADFFDA00F24759 /* CoinListRequest.swift in Sources */,
 				182B978225A1AA3F005BD868 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
