@@ -37,7 +37,7 @@ class NetworkManager {
         taskWithCoinListURL.resume()        
     }
 
-    static func requestCoinChartData(completion: ([ChartData]) -> Void) {
+    static func requestCoinChartData(completion: @escaping ([ChartData]) -> Void) {
         let coinChartDataURL = URL(string: "https://min-api.cryptocompare.com/data/histohour?fsym=BTC&tsym=USD&limit=24")!
         let taskWithCoinChartDataURL = session.dataTask(with: coinChartDataURL) { (data, response, error) in
             let successRange = 200..<300
@@ -51,6 +51,8 @@ class NetworkManager {
             let decoder = JSONDecoder()
             do {
                 let response = try decoder.decode(ChartDataResponse.self, from: responseData)
+                let chartDatas = response.chartDatas
+                completion(chartDatas)
             } catch {
                 print("--> CoinChart Err: \(error.localizedDescription)")
             }
@@ -58,7 +60,7 @@ class NetworkManager {
         taskWithCoinChartDataURL.resume()
     }
     
-    static func requestNewsList(completion: ([Article]) -> Void) {
+    static func requestNewsList(completion: @escaping ([Article]) -> Void) {
         let newsURL = URL(string: "http://coinbelly.com/api/get_rss")!
         let taskWithNewsURL = session.dataTask(with: newsURL) { (data, response, error) in
             let successRange = 200..<300
