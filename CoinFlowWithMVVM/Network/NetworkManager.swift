@@ -83,6 +83,7 @@ class NetworkManager {
             }
             
         }
+        taskWithNewsURL.resume()
     }
     
 }
