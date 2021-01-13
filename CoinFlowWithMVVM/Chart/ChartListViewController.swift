@@ -22,12 +22,24 @@ class ChartListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NetworkManager.requestCoinList { coinList in
-            print("코인리스트 --> \(coinList.count)")
+        NetworkManager.requestCoinList { result in
+
+            switch result {
+            case .success(let coins):
+                print("코인리스트 --> \(coins.count)")
+            case .failure(let error):
+                print("코인리스트 에러 --> \(error.localizedDescription)")
+            }
         }
         
-        NetworkManager.requestCoinChartData { chartDatas in
-            print("차트데이터 --> \(chartDatas.count)")
+        NetworkManager.requestCoinChartData { result in
+            
+            switch result {
+            case .success(let chartDatas):
+                print("차트데이터 --> \(chartDatas.count)")
+            case .failure(let error):
+                print("차트데이터 에러 --> \(error.localizedDescription)")
+            }
         }
     }
     

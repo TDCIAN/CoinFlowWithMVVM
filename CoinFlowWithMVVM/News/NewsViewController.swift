@@ -17,8 +17,14 @@ class NewsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NetworkManager.requestNewsList { articles in
-            print("뉴스리스트 --> \(articles.count)")
+        NetworkManager.requestNewsList { result in
+            switch result {
+            case .success(let articles):
+                print("뉴스리스트 --> \(articles.count)")
+            case .failure(let error):
+                print("뉴스리스트 에러 --> \(error.localizedDescription)")
+            }
+            
         }
     }
 }
