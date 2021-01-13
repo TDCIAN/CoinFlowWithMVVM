@@ -89,16 +89,14 @@ class NetworkManager {
 }
 
 extension NetworkManager {
-    static func requestCoinList(completion: @escaping ([Coin]) -> Void) {
+    static func requestCoinList(completion: @escaping (Result<[Coin], Error>) -> Void) {
         let param: RequestParam = .url(["fsyms":"BTC,ETH,DASH,LTC,ETC,XRP,BCH,XMR,QTUM,ZEC,BTG", "tsyms":"USD"])
         guard let url = CoinListRequest(param: param).urlRequest().url else { return }
         
 //        let coinListURL = URL(string: "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,DASH,LTC,ETC,XRP,BCH,XMR,QTUM,ZEC,BTG&tsyms=USD")!
         let taskWithCoinListURL = session.dataTask(with: url) { (data, response, error) in
-            let successRange = 200..<300
-            guard error == nil,
-                  let statusCode = (response as? HTTPURLResponse)?.statusCode,
-                  successRange.contains(statusCode) else {
+            if let error = error {
+                completion(.failure(error))
                 return
             }
             
@@ -109,7 +107,7 @@ extension NetworkManager {
                 let response = try decoder.decode(CoinListResponse.self, from: responseData)
                 print("--> coinList Success: \(response.raw.btg)")
                 let coinList = response.raw.allCoins()
-                completion(coinList)
+                completion(.success(coinList))
             } catch {
                 print("--> CoinList Err: \(error.localizedDescription)")
             }
