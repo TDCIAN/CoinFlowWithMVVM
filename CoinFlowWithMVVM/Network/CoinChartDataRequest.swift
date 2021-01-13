@@ -13,7 +13,7 @@ struct CoinChartDataRequest: Request {
     var path: String
     
     init(period: Period, param: RequestParam) {
-        self.path = EndPoint.coinChartData + period.urlPath
+        self.path = EndPoint.coinList + period.urlPath
         self.params = param
     }
 }
