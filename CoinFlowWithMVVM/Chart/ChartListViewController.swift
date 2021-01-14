@@ -14,14 +14,11 @@ class ChartListViewController: UIViewController {
     @IBOutlet weak var chartCollectionView: UICollectionView!
     @IBOutlet weak var chartTableView: UITableView!
     @IBOutlet weak var chartTableViewHeight: NSLayoutConstraint!
-    
+
     var coinInfoList: [CoinInfo] = [] {
         didSet {
             // data 세팅이 되었을 때 무엇을 해야 하는가?
             // -> 테이블뷰 리로드 시키기
-            DispatchQueue.main.async {
-                self.chartTableView.reloadData()
-            }
         }
     }
     
@@ -93,7 +90,7 @@ extension ChartListViewController: UICollectionViewDataSource {
         else {
             return UICollectionViewCell()
         }
-
+        cell.backgroundColor = UIColor.randomColor()
         return cell
     }
 
@@ -114,21 +111,22 @@ extension ChartListViewController: UICollectionViewDelegateFlowLayout {
 }
 
 class ChartCardCell: UICollectionViewCell {
-
+    
 }
 
 // MARK: - TableView
 extension ChartListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return coinInfoList.count
+//        return coinInfoList.count
+        return 15
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChartListCell", for: indexPath) as? ChartListCell else {
             return UITableViewCell()
         }
-        let coinInfo = coinInfoList[indexPath.row]
-        cell.configCell(coinInfo)
+//        let coinInfo = coinInfoList[indexPath.row]
+//        cell.configCell(coinInfo)
         return cell
     }
     
@@ -136,38 +134,7 @@ extension ChartListViewController: UITableViewDataSource {
 }
 
 class ChartListCell: UITableViewCell {
-    
-    @IBOutlet weak var currentStatusBox: UIView!
-    @IBOutlet weak var coinName: UILabel!
-    @IBOutlet weak var currentPrice: UILabel!
-    @IBOutlet weak var change24Hours: UILabel!
-    @IBOutlet weak var changePercent: UILabel!
-    @IBOutlet weak var currentStatusImageView: UIImageView!
-    
-    
     func configCell(_ info: CoinInfo) {
-        let coinType = info.key
-        let coin = info.value
         
-        let isUnderperform = coin.usd.changeLast24H > 0
-        let upColor = UIColor.systemPink
-        let downColor = UIColor.systemBlue
-        let color = isUnderperform ? downColor : upColor
-        
-        currentStatusBox.backgroundColor = color
-        coinName.text = coinType.rawValue
-        currentPrice.text = String(format: "%.1f", coin.usd.price)
-        
-        change24Hours.text = String(format: "%.1f", coin.usd.changeLast24H)
-        
-        changePercent.text = String(format: "%.1f %%", coin.usd.changePercentLast24H)
-        
-        change24Hours.textColor = color
-        changePercent.textColor = color
-        
-        let statusImage = isUnderperform ? UIImage(systemName: "arrowtriangle.up.fill") : UIImage(systemName: "arrowtriangle.down.fill")
-        
-        currentStatusImageView.image = statusImage
-        currentStatusImageView.tintColor = color
     }
 }
