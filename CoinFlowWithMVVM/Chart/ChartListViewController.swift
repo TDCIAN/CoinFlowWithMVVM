@@ -93,7 +93,8 @@ extension ChartListViewController: UICollectionViewDataSource {
         else {
             return UICollectionViewCell()
         }
-        cell.backgroundColor = UIColor.randomColor()
+        let coinInfo = coinInfoList[indexPath.row]
+        cell.configCell(coinInfo)
         return cell
     }
 
@@ -114,7 +115,9 @@ extension ChartListViewController: UICollectionViewDelegateFlowLayout {
 }
 
 class ChartCardCell: UICollectionViewCell {
-    
+    func configCell(_ info: CoinInfo) {
+        
+    }
 }
 
 // MARK: - TableView
