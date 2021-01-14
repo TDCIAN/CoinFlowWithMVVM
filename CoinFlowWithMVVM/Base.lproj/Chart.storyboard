@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfM-Gi-TR7">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JfM-Gi-TR7">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6T4-Gr-pCe">
@@ -160,7 +160,6 @@
                                 <constraints>
                                     <constraint firstItem="Men-xr-qEc" firstAttribute="top" secondItem="6T4-Gr-pCe" secondAttribute="bottom" constant="20" id="0jl-M5-w72"/>
                                     <constraint firstItem="6T4-Gr-pCe" firstAttribute="trailing" secondItem="Men-xr-qEc" secondAttribute="trailing" id="65K-7b-e8l"/>
-                                    <constraint firstAttribute="bottom" secondItem="6T4-Gr-pCe" secondAttribute="bottom" constant="736" id="7FD-xW-U2y"/>
                                     <constraint firstItem="6T4-Gr-pCe" firstAttribute="leading" secondItem="Men-xr-qEc" secondAttribute="leading" id="Kwy-2Z-vzS"/>
                                     <constraint firstItem="Men-xr-qEc" firstAttribute="top" secondItem="JfM-Gi-TR7" secondAttribute="top" constant="58" id="YAe-q2-oFb"/>
                                     <constraint firstAttribute="trailing" secondItem="6T4-Gr-pCe" secondAttribute="trailing" id="hoL-Qm-et9"/>
@@ -182,6 +181,7 @@
                     <connections>
                         <outlet property="chartCollectionView" destination="6T4-Gr-pCe" id="02e-aE-cDo"/>
                         <outlet property="chartTableView" destination="Men-xr-qEc" id="rxq-Sy-xc3"/>
+                        <outlet property="chartTableViewHeight" destination="cWk-RB-uyf" id="pXz-32-WuA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

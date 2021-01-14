@@ -14,7 +14,7 @@ class ChartListViewController: UIViewController {
     @IBOutlet weak var chartCollectionView: UICollectionView!
     @IBOutlet weak var chartTableView: UITableView!
     @IBOutlet weak var chartTableViewHeight: NSLayoutConstraint!
-
+    
     var coinInfoList: [CoinInfo] = [] {
         didSet {
             // data 세팅이 되었을 때 무엇을 해야 하는가?
@@ -153,5 +153,21 @@ class ChartListCell: UITableViewCell {
         let upColor = UIColor.systemPink
         let downColor = UIColor.systemBlue
         let color = isUnderperform ? downColor : upColor
+        
+        currentStatusBox.backgroundColor = color
+        coinName.text = coinType.rawValue
+        currentPrice.text = String(format: "%.1f", coin.usd.price)
+        
+        change24Hours.text = String(format: "%.1f", coin.usd.changeLast24H)
+        
+        changePercent.text = String(format: "%.1f %%", coin.usd.changePercentLast24H)
+        
+        change24Hours.textColor = color
+        changePercent.textColor = color
+        
+        let statusImage = isUnderperform ? UIImage(systemName: "arrowtriangle.up.fill") : UIImage(systemName: "arrowtriangle.down.fill")
+        
+        currentStatusImageView.image = statusImage
+        currentStatusImageView.tintColor = color
     }
 }
