@@ -7,6 +7,20 @@
 
 import Foundation
 
+enum CoinType: String, CaseIterable {
+    case BTC
+    case ETH
+    case DASH
+    case LTC
+    case ETC
+    case XRP
+    case BCH
+    case XMR
+    case QTUM
+    case ZEC
+    case BTG
+}
+
 struct CoinListResponse: Codable {
     let raw: RawData
     
