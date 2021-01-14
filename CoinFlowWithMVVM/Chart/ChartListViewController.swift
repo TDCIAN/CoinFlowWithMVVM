@@ -19,6 +19,10 @@ class ChartListViewController: UIViewController {
         didSet {
             // data 세팅이 되었을 때 무엇을 해야 하는가?
             // -> 테이블뷰 리로드 시키기
+            DispatchQueue.main.async {
+                self.chartTableView.reloadData()
+                self.adjustTableViewHeight()
+            }
         }
     }
     
@@ -39,7 +43,7 @@ class ChartListViewController: UIViewController {
                 // => [(BTC, coin), (ETH, coin)]
                 let tuples = zip(CoinType.allCases, coins).map { (key: $0, value: $1) }
                 self.coinInfoList = tuples
-
+                print("코인리스트 --> \(coins.count)")
             case .failure(let error):
                 print("코인리스트 에러 --> \(error.localizedDescription)")
             }
@@ -117,16 +121,16 @@ class ChartCardCell: UICollectionViewCell {
 // MARK: - TableView
 extension ChartListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return coinInfoList.count
-        return 15
+        return coinInfoList.count
+//        return 15
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChartListCell", for: indexPath) as? ChartListCell else {
             return UITableViewCell()
         }
-//        let coinInfo = coinInfoList[indexPath.row]
-//        cell.configCell(coinInfo)
+        let coinInfo = coinInfoList[indexPath.row]
+        cell.configCell(coinInfo)
         return cell
     }
     
