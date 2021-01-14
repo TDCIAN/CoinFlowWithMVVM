@@ -78,6 +78,7 @@
 		18A4AEBF25A34B750098507C /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = SOURCE_ROOT; };
 		18A4AEC525A34B880098507C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CoinFlowWithMVVM/Base.lproj/Setting.storyboard; sourceTree = SOURCE_ROOT; };
 		18DCBC1B25A5ED1B00F11E10 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		18E169FB25B037BD0040DC70 /* ZipPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ZipPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		18EA68BC25ADFB6A00F24759 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		18EA68C125ADFB7900F24759 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		18EA68C625ADFFDA00F24759 /* CoinListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListRequest.swift; sourceTree = "<group>"; };
@@ -147,6 +148,7 @@
 				182B974F25A1A5F7005BD868 /* LaunchScreen.storyboard */,
 				182B975225A1A5F7005BD868 /* Info.plist */,
 				182267D625A8725B00774A28 /* API_Playground.playground */,
+				18E169FB25B037BD0040DC70 /* ZipPlayground.playground */,
 			);
 			path = CoinFlowWithMVVM;
 			sourceTree = "<group>";

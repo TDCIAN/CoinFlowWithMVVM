@@ -26,6 +26,10 @@ class ChartListViewController: UIViewController {
 
             switch result {
             case .success(let coins):
+//                CoinType.allCases + coins
+                
+                let tuple = zip(CoinType.allCases, coins).map { (key: $0, value: $1) }
+                
                 print("코인리스트 --> \(coins.count), 코인퍼스트: \(coins.first)")
             case .failure(let error):
                 print("코인리스트 에러 --> \(error.localizedDescription)")
