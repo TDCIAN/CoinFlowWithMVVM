@@ -15,7 +15,15 @@ class ChartListViewController: UIViewController {
     @IBOutlet weak var chartTableView: UITableView!
     @IBOutlet weak var chartTableViewHeight: NSLayoutConstraint!
 
-    var coinInfoList: [CoinInfo] = []
+    var coinInfoList: [CoinInfo] = [] {
+        didSet {
+            // data 세팅이 되었을 때 무엇을 해야 하는가?
+            // -> 테이블뷰 리로드 시키기
+            DispatchQueue.main.async {
+                self.chartTableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +38,11 @@ class ChartListViewController: UIViewController {
 
             switch result {
             case .success(let coins):
-//                CoinType.allCases + coins
-                
-                let tuple = zip(CoinType.allCases, coins).map { (key: $0, value: $1) }
-                
-                print("코인리스트 --> \(coins.count), 코인퍼스트: \(coins.first)")
+                // CoinType.allCases + coins
+                // => [(BTC, coin), (ETH, coin)]
+                let tuples = zip(CoinType.allCases, coins).map { (key: $0, value: $1) }
+                self.coinInfoList = tuples
+
             case .failure(let error):
                 print("코인리스트 에러 --> \(error.localizedDescription)")
             }
@@ -76,7 +84,7 @@ extension ChartListViewController {
 // MARK: - CollectionView
 extension ChartListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return coinInfoList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
