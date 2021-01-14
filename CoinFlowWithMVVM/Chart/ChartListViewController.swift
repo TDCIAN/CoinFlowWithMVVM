@@ -84,7 +84,7 @@ extension ChartListViewController {
 // MARK: - CollectionView
 extension ChartListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return coinInfoList.count
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -93,8 +93,7 @@ extension ChartListViewController: UICollectionViewDataSource {
         else {
             return UICollectionViewCell()
         }
-        let coinInfo = coinInfoList[indexPath.row]
-        cell.configCell(coinInfo)
+
         return cell
     }
 
@@ -115,22 +114,21 @@ extension ChartListViewController: UICollectionViewDelegateFlowLayout {
 }
 
 class ChartCardCell: UICollectionViewCell {
-    func configCell(_ info: CoinInfo) {
-        
-    }
+
 }
 
 // MARK: - TableView
 extension ChartListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 18
+        return coinInfoList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ChartListCell", for: indexPath) as? ChartListCell else {
             return UITableViewCell()
         }
-        cell.backgroundColor = UIColor.randomColor()
+        let coinInfo = coinInfoList[indexPath.row]
+        cell.configCell(coinInfo)
         return cell
     }
     
@@ -139,4 +137,21 @@ extension ChartListViewController: UITableViewDataSource {
 
 class ChartListCell: UITableViewCell {
     
+    @IBOutlet weak var currentStatusBox: UIView!
+    @IBOutlet weak var coinName: UILabel!
+    @IBOutlet weak var currentPrice: UILabel!
+    @IBOutlet weak var change24Hours: UILabel!
+    @IBOutlet weak var changePercent: UILabel!
+    @IBOutlet weak var currentStatusImageView: UIImageView!
+    
+    
+    func configCell(_ info: CoinInfo) {
+        let coinType = info.key
+        let coin = info.value
+        
+        let isUnderperform = coin.usd.changeLast24H > 0
+        let upColor = UIColor.systemPink
+        let downColor = UIColor.systemBlue
+        let color = isUnderperform ? downColor : upColor
+    }
 }
