@@ -26,7 +26,7 @@ class ChartListViewController: UIViewController {
 
             switch result {
             case .success(let coins):
-                print("코인리스트 --> \(coins.count)")
+                print("코인리스트 --> \(coins.count), 코인퍼스트: \(coins.first)")
             case .failure(let error):
                 print("코인리스트 에러 --> \(error.localizedDescription)")
             }
