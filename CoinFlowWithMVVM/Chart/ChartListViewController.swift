@@ -7,11 +7,15 @@
 
 import UIKit
 
+typealias CoinInfo = (key: CoinType, value: Coin)
+
 class ChartListViewController: UIViewController {
 
     @IBOutlet weak var chartCollectionView: UICollectionView!
     @IBOutlet weak var chartTableView: UITableView!
     @IBOutlet weak var chartTableViewHeight: NSLayoutConstraint!
+
+    var coinInfoList: [CoinInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
