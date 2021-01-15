@@ -211,14 +211,54 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PWw-7Q-0RH">
-                                <rect key="frame" x="0.0" y="582" width="414" height="210"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWw-7Q-0RH">
+                                <rect key="frame" x="40" y="802" width="334" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mFn-cU-yQc">
+                                        <rect key="frame" x="0.0" y="10" width="334" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDl-5D-wUL">
+                                                <rect key="frame" x="0.0" y="0.0" width="83.5" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                                <state key="normal" title="1D"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdf-QC-Xdi">
+                                                <rect key="frame" x="83.5" y="0.0" width="83.5" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                                <state key="normal" title="1W"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcQ-A9-hhE">
+                                                <rect key="frame" x="167" y="0.0" width="83.5" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                                <state key="normal" title="1M"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7EV-as-Gfd">
+                                                <rect key="frame" x="250.5" y="0.0" width="83.5" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                                <state key="normal" title="1Y"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="2lJ-Jw-8BM"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="mFn-cU-yQc" secondAttribute="trailing" id="6Ph-23-inP"/>
+                                    <constraint firstItem="mFn-cU-yQc" firstAttribute="centerY" secondItem="PWw-7Q-0RH" secondAttribute="centerY" id="cLY-D0-SKL"/>
+                                    <constraint firstAttribute="height" constant="60" id="lCm-J6-5VF"/>
+                                    <constraint firstItem="mFn-cU-yQc" firstAttribute="leading" secondItem="PWw-7Q-0RH" secondAttribute="leading" id="tWR-wu-jQW"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AyC-xu-9zS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AyC-xu-9zS" firstAttribute="bottom" secondItem="PWw-7Q-0RH" secondAttribute="bottom" id="ajz-Jh-9zM"/>
+                            <constraint firstItem="PWw-7Q-0RH" firstAttribute="leading" secondItem="AyC-xu-9zS" secondAttribute="leading" constant="40" id="fNn-HN-KEt"/>
+                            <constraint firstItem="PWw-7Q-0RH" firstAttribute="centerX" secondItem="AyC-xu-9zS" secondAttribute="centerX" id="nR4-04-DcV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6TT-9d-pv4"/>
                 </viewController>
