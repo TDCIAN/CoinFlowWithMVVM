@@ -8,7 +8,9 @@
 import UIKit
 
 class ChartDetailViewController: UIViewController {
-
+    @IBOutlet weak var coinTypeLabel: UILabel!
+    @IBOutlet weak var currentPriceLabel: UILabel!
+    
     var coinInfo: CoinInfo!
     
     override func viewDidLoad() {
