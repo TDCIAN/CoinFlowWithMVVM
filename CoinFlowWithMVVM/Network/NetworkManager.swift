@@ -117,8 +117,13 @@ extension NetworkManager {
         taskWithCoinListURL.resume()
     }
 
-    static func requestCoinChartData(completion: @escaping (Result<[ChartData], Error>) -> Void) {
-        let param: RequestParam = .url(["fsym":"BTC", "tsym":"USD", "limit":"24"])
+    static func requestCoinChartData(coinType: CoinType, period: Period, completion: @escaping (Result<[ChartData], Error>) -> Void) {
+        let param: RequestParam =
+            .url(["fsym":"\(coinType.rawValue)",
+                  "tsym":"USD",
+                  "limit":"\(period.limitParameter)",
+                  "aggregate":"\(period.aggregateParameter)"])
+        
         guard let url = CoinChartDataRequest(period: .day, param: param).urlRequest().url else { return }
         
         let coinChartDataURL = URL(string: "https://min-api.cryptocompare.com/data/histohour?fsym=BTC&tsym=USD&limit=24")!

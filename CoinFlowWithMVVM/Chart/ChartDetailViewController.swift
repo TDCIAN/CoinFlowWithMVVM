@@ -7,6 +7,8 @@
 
 import UIKit
 
+typealias CoinChartInfo = (key: Period, value: [ChartData])
+
 class ChartDetailViewController: UIViewController {
     @IBOutlet weak var coinTypeLabel: UILabel!
     @IBOutlet weak var currentPriceLabel: UILabel!
@@ -14,6 +16,8 @@ class ChartDetailViewController: UIViewController {
     @IBOutlet weak var highlightBarLeading: NSLayoutConstraint!
     
     var coinInfo: CoinInfo!
+    var chartDatas: [CoinChartInfo] = []
+    var selectedPeriod: Period = .day
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,12 +53,17 @@ class ChartDetailViewController: UIViewController {
 extension ChartDetailViewController {
     
     private func fetchData() {
-        NetworkManager.requestCoinChartData { result in
-            switch result {
-            case .success(let coinChartDatas):
-                print("--> 코인차트데이터: \(coinChartDatas)")
-            case .failure(let error):
-                print("--> 코인차트데이터에러: \(error.localizedDescription)")
+        
+        let periodUnits: [Period] = [.day, .month, .week, .year]
+        periodUnits.forEach { period in
+            NetworkManager.requestCoinChartData(coinType: coinInfo.key, period: period) { result in
+                switch result {
+                case .success(let coinChartDatas):
+    //                print("--> 코인차트데이터: \(coinChartDatas)")
+                    self.chartDatas.append(CoinChartInfo(key: period, value: coinChartDatas))
+                case .failure(let error):
+                    print("--> 코인차트데이터에러: \(error.localizedDescription)")
+                }
             }
         }
     }

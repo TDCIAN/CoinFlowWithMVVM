@@ -49,15 +49,15 @@ class ChartListViewController: UIViewController {
             }
         }
         
-        NetworkManager.requestCoinChartData { result in
-            
-            switch result {
-            case .success(let coinChartDatas):
-                print("차트데이터 --> \(coinChartDatas.count)")
-            case .failure(let error):
-                print("차트데이터 에러 --> \(error.localizedDescription)")
-            }
-        }
+//        NetworkManager.requestCoinChartData { result in
+//
+//            switch result {
+//            case .success(let coinChartDatas):
+//                print("차트데이터 --> \(coinChartDatas.count)")
+//            case .failure(let error):
+//                print("차트데이터 에러 --> \(error.localizedDescription)")
+//            }
+//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
