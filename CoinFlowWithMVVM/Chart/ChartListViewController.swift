@@ -74,11 +74,12 @@ extension ChartListViewController {
         chartTableViewHeight.constant = chartTableView.contentSize.height
     }
     
-    private func showDetail() {
+    private func showDetail(coinInfo: CoinInfo) {
         let storyboard = UIStoryboard(name: "Chart", bundle: .main)
-        let chartDetailViewController = storyboard.instantiateViewController(withIdentifier: "ChartDetailViewController")
+        if let detailVC = storyboard.instantiateViewController(withIdentifier: "ChartDetailViewController") as? ChartDetailViewController {
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
         
-        navigationController?.pushViewController(chartDetailViewController, animated: true)
     }
 }
 
@@ -139,7 +140,8 @@ extension ChartListViewController: UITableViewDataSource {
 
 extension ChartListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        showDetail()
+        let coinInfo = coinInfoList[indexPath.row]
+        showDetail(coinInfo: coinInfo)
     }
 }
 
