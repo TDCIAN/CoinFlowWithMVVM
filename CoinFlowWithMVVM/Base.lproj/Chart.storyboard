@@ -54,7 +54,7 @@
                                             <constraint firstAttribute="height" constant="800" id="GF9-QP-IOi"/>
                                         </constraints>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChartListCell" rowHeight="60" id="U67-ve-jvu" customClass="ChartListCell" customModule="CoinFlowWithMVVM" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChartListCell" rowHeight="60" id="U67-ve-jvu" customClass="ChartListCell" customModule="CoinFlowWithMVVM" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U67-ve-jvu" id="I1X-vh-OHl">
