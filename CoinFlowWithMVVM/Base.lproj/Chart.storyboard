@@ -251,21 +251,33 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="83.5" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
                                                 <state key="normal" title="1D"/>
+                                                <connections>
+                                                    <action selector="dailyButtonTapped:" destination="d9h-hy-qXg" eventType="touchUpInside" id="DYk-IS-2hS"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdf-QC-Xdi">
                                                 <rect key="frame" x="83.5" y="0.0" width="83.5" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
                                                 <state key="normal" title="1W"/>
+                                                <connections>
+                                                    <action selector="weeklyButtonTapped:" destination="d9h-hy-qXg" eventType="touchUpInside" id="ec7-b1-QlL"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcQ-A9-hhE">
                                                 <rect key="frame" x="167" y="0.0" width="83.5" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
                                                 <state key="normal" title="1M"/>
+                                                <connections>
+                                                    <action selector="monthlyButtonTapped:" destination="d9h-hy-qXg" eventType="touchUpInside" id="YQF-a8-Jbf"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7EV-as-Gfd">
                                                 <rect key="frame" x="250.5" y="0.0" width="83.5" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
                                                 <state key="normal" title="1Y"/>
+                                                <connections>
+                                                    <action selector="yearlyButtonTapped:" destination="d9h-hy-qXg" eventType="touchUpInside" id="iYk-vX-VZG"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -310,6 +322,8 @@
                     <connections>
                         <outlet property="coinTypeLabel" destination="FoQ-O4-bnv" id="Vpg-hb-i0T"/>
                         <outlet property="currentPriceLabel" destination="675-WS-0Pp" id="MMF-gd-BWs"/>
+                        <outlet property="highlightBar" destination="azK-H2-GrU" id="qLD-GE-uIH"/>
+                        <outlet property="highlightBarLeading" destination="9OE-0j-tV2" id="7F2-qa-eoB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9C-tA-kEZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
