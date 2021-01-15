@@ -242,11 +242,21 @@
                                             <constraint firstAttribute="height" constant="40" id="2lJ-Jw-8BM"/>
                                         </constraints>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azK-H2-GrU">
+                                        <rect key="frame" x="0.0" y="55" width="84" height="5"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="5" id="QJV-PI-lf9"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="mFn-cU-yQc" secondAttribute="trailing" id="6Ph-23-inP"/>
+                                    <constraint firstItem="azK-H2-GrU" firstAttribute="width" secondItem="YDl-5D-wUL" secondAttribute="width" multiplier="1.00599" id="9Dj-oA-AVJ"/>
+                                    <constraint firstItem="azK-H2-GrU" firstAttribute="leading" secondItem="PWw-7Q-0RH" secondAttribute="leading" id="9OE-0j-tV2"/>
                                     <constraint firstItem="mFn-cU-yQc" firstAttribute="centerY" secondItem="PWw-7Q-0RH" secondAttribute="centerY" id="cLY-D0-SKL"/>
+                                    <constraint firstAttribute="bottom" secondItem="azK-H2-GrU" secondAttribute="bottom" id="jZX-ue-slE"/>
                                     <constraint firstAttribute="height" constant="60" id="lCm-J6-5VF"/>
                                     <constraint firstItem="mFn-cU-yQc" firstAttribute="leading" secondItem="PWw-7Q-0RH" secondAttribute="leading" id="tWR-wu-jQW"/>
                                 </constraints>
@@ -291,6 +301,9 @@
         <image name="chart.bar.xaxis" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
