@@ -24,5 +24,11 @@ class ChartDetailViewController: UIViewController {
         }
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("--> 꽂힌 정보 확인 => 키: \(coinInfo.key), 밸류: \(coinInfo.value)")
+    }
 
 }
