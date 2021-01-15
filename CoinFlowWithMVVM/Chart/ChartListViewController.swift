@@ -43,7 +43,7 @@ class ChartListViewController: UIViewController {
                 // => [(BTC, coin), (ETH, coin)]
                 let tuples = zip(CoinType.allCases, coins).map { (key: $0, value: $1) }
                 self.coinInfoList = tuples
-                print("코인리스트 --> \(coins.count)")
+                print("코인리스트 --> \(coins.count), 첫번째: \(coins.first)")
             case .failure(let error):
                 print("코인리스트 에러 --> \(error.localizedDescription)")
             }
@@ -135,6 +135,12 @@ extension ChartListViewController: UITableViewDataSource {
     }
     
     
+}
+
+extension ChartListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showDetail()
+    }
 }
 
 class ChartListCell: UITableViewCell {
