@@ -33,21 +33,24 @@ class ChartDetailViewController: UIViewController {
     }
 
     @IBAction func dailyButtonTapped(_ sender: UIButton) {
+        renderChart(with: .day)
         moveHighlightBar(to: sender)
     }
     
     @IBAction func weeklyButtonTapped(_ sender: UIButton) {
+        renderChart(with: .week)
         moveHighlightBar(to: sender)
     }
     
     @IBAction func monthlyButtonTapped(_ sender: UIButton) {
+        renderChart(with: .month)
         moveHighlightBar(to: sender)
     }
     
     @IBAction func yearlyButtonTapped(_ sender: UIButton) {
+        renderChart(with: .year)
         moveHighlightBar(to: sender)
     }
-    
 }
 
 extension ChartDetailViewController {
@@ -80,6 +83,7 @@ extension ChartDetailViewController {
         dispatchGroup.notify(queue: .main) {
             // -> 차트를 렌더한다
             print("render chart... \(self.chartDatas.count)")
+            self.renderChart(with: self.selectedPeriod)
         }
 
 
@@ -92,5 +96,10 @@ extension ChartDetailViewController {
     
     private func moveHighlightBar(to button: UIButton) {
         highlightBarLeading.constant = button.frame.minX
+    }
+    
+    private func renderChart(with period: Period) {
+        // 선택된 period로 차트 렌더하기
+        print("rendering... \(period)")
     }
 }
