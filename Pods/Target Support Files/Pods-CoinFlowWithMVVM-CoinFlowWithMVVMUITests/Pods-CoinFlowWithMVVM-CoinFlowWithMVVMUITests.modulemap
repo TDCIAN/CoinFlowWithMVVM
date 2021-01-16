@@ -1,0 +1,6 @@
+framework module Pods_CoinFlowWithMVVM_CoinFlowWithMVVMUITests {
+  umbrella header "Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

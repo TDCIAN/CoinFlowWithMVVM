@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		112DE82024FA3C70B6A9583F /* Pods_CoinFlowWithMVVM_CoinFlowWithMVVMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B5622EB286FD18CB916588 /* Pods_CoinFlowWithMVVM_CoinFlowWithMVVMUITests.framework */; };
 		182B974525A1A5F7005BD868 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B974425A1A5F7005BD868 /* AppDelegate.swift */; };
 		182B974725A1A5F7005BD868 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B974625A1A5F7005BD868 /* SceneDelegate.swift */; };
 		182B974C25A1A5F7005BD868 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182B974A25A1A5F7005BD868 /* Main.storyboard */; };
@@ -33,6 +34,8 @@
 		18EA68CC25AE00CB00F24759 /* CoinChartDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA68CB25AE00CB00F24759 /* CoinChartDataRequest.swift */; };
 		18EA68D125AE011400F24759 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA68D025AE011400F24759 /* Period.swift */; };
 		18EA68D625AE02F000F24759 /* NewsListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA68D525AE02F000F24759 /* NewsListRequest.swift */; };
+		A8F785C826E40B9D1CD91BA1 /* Pods_CoinFlowWithMVVMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDB83A9CCA842DB537581AB /* Pods_CoinFlowWithMVVMTests.framework */; };
+		B8F84B755078ADCA8AE4AB71 /* Pods_CoinFlowWithMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305860280FF642AB34421762 /* Pods_CoinFlowWithMVVM.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D7580C9893050D6048EBEEF /* Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests.release.xcconfig"; path = "Target Support Files/Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests/Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		182267D625A8725B00774A28 /* API_Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = API_Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		182B974125A1A5F7005BD868 /* CoinFlowWithMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinFlowWithMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182B974425A1A5F7005BD868 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +91,14 @@
 		18EA68CB25AE00CB00F24759 /* CoinChartDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinChartDataRequest.swift; sourceTree = "<group>"; };
 		18EA68D025AE011400F24759 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
 		18EA68D525AE02F000F24759 /* NewsListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListRequest.swift; sourceTree = "<group>"; };
+		305860280FF642AB34421762 /* Pods_CoinFlowWithMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinFlowWithMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BDB83A9CCA842DB537581AB /* Pods_CoinFlowWithMVVMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinFlowWithMVVMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73B5622EB286FD18CB916588 /* Pods_CoinFlowWithMVVM_CoinFlowWithMVVMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoinFlowWithMVVM_CoinFlowWithMVVMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F633DF02A82907C33AAA3E /* Pods-CoinFlowWithMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinFlowWithMVVM.debug.xcconfig"; path = "Target Support Files/Pods-CoinFlowWithMVVM/Pods-CoinFlowWithMVVM.debug.xcconfig"; sourceTree = "<group>"; };
+		A3F69A2C7DEC928ABAA4339D /* Pods-CoinFlowWithMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinFlowWithMVVM.release.xcconfig"; path = "Target Support Files/Pods-CoinFlowWithMVVM/Pods-CoinFlowWithMVVM.release.xcconfig"; sourceTree = "<group>"; };
+		A9BAFA4FD77A5FB3292AA95F /* Pods-CoinFlowWithMVVMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinFlowWithMVVMTests.debug.xcconfig"; path = "Target Support Files/Pods-CoinFlowWithMVVMTests/Pods-CoinFlowWithMVVMTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B41D1FD3891B5B134AF8FE0C /* Pods-CoinFlowWithMVVMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinFlowWithMVVMTests.release.xcconfig"; path = "Target Support Files/Pods-CoinFlowWithMVVMTests/Pods-CoinFlowWithMVVMTests.release.xcconfig"; sourceTree = "<group>"; };
+		DD15080C74F3B4A68C75328F /* Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests.debug.xcconfig"; path = "Target Support Files/Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests/Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8F84B755078ADCA8AE4AB71 /* Pods_CoinFlowWithMVVM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8F785C826E40B9D1CD91BA1 /* Pods_CoinFlowWithMVVMTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112DE82024FA3C70B6A9583F /* Pods_CoinFlowWithMVVM_CoinFlowWithMVVMUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +136,8 @@
 				182B975A25A1A5F8005BD868 /* CoinFlowWithMVVMTests */,
 				182B976525A1A5F8005BD868 /* CoinFlowWithMVVMUITests */,
 				182B974225A1A5F7005BD868 /* Products */,
+				CC9FA0326770DA27C6B1AC74 /* Pods */,
+				EC6366904E2A4A5C361B438D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -234,6 +251,30 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		CC9FA0326770DA27C6B1AC74 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A0F633DF02A82907C33AAA3E /* Pods-CoinFlowWithMVVM.debug.xcconfig */,
+				A3F69A2C7DEC928ABAA4339D /* Pods-CoinFlowWithMVVM.release.xcconfig */,
+				DD15080C74F3B4A68C75328F /* Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests.debug.xcconfig */,
+				0D7580C9893050D6048EBEEF /* Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests.release.xcconfig */,
+				A9BAFA4FD77A5FB3292AA95F /* Pods-CoinFlowWithMVVMTests.debug.xcconfig */,
+				B41D1FD3891B5B134AF8FE0C /* Pods-CoinFlowWithMVVMTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EC6366904E2A4A5C361B438D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				305860280FF642AB34421762 /* Pods_CoinFlowWithMVVM.framework */,
+				73B5622EB286FD18CB916588 /* Pods_CoinFlowWithMVVM_CoinFlowWithMVVMUITests.framework */,
+				4BDB83A9CCA842DB537581AB /* Pods_CoinFlowWithMVVMTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -241,9 +282,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 182B976B25A1A5F8005BD868 /* Build configuration list for PBXNativeTarget "CoinFlowWithMVVM" */;
 			buildPhases = (
+				FC7D8E72D06797FCD19F99BD /* [CP] Check Pods Manifest.lock */,
 				182B973D25A1A5F7005BD868 /* Sources */,
 				182B973E25A1A5F7005BD868 /* Frameworks */,
 				182B973F25A1A5F7005BD868 /* Resources */,
+				7019ECC8CFA265A7ED9D1AAE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -258,6 +301,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 182B976E25A1A5F8005BD868 /* Build configuration list for PBXNativeTarget "CoinFlowWithMVVMTests" */;
 			buildPhases = (
+				62CFFA3C2F20161CAD630671 /* [CP] Check Pods Manifest.lock */,
 				182B975325A1A5F8005BD868 /* Sources */,
 				182B975425A1A5F8005BD868 /* Frameworks */,
 				182B975525A1A5F8005BD868 /* Resources */,
@@ -276,9 +320,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 182B977125A1A5F8005BD868 /* Build configuration list for PBXNativeTarget "CoinFlowWithMVVMUITests" */;
 			buildPhases = (
+				40052B2F66194217A7E117FD /* [CP] Check Pods Manifest.lock */,
 				182B975E25A1A5F8005BD868 /* Sources */,
 				182B975F25A1A5F8005BD868 /* Frameworks */,
 				182B976025A1A5F8005BD868 /* Resources */,
+				59E639FDDAAFC7BB3CEE2F9A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -361,6 +407,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		40052B2F66194217A7E117FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59E639FDDAAFC7BB3CEE2F9A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests/Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests/Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests/Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62CFFA3C2F20161CAD630671 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoinFlowWithMVVMTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7019ECC8CFA265A7ED9D1AAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoinFlowWithMVVM/Pods-CoinFlowWithMVVM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoinFlowWithMVVM/Pods-CoinFlowWithMVVM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoinFlowWithMVVM/Pods-CoinFlowWithMVVM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC7D8E72D06797FCD19F99BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoinFlowWithMVVM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		182B973D25A1A5F7005BD868 /* Sources */ = {
@@ -573,6 +722,7 @@
 		};
 		182B976C25A1A5F8005BD868 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0F633DF02A82907C33AAA3E /* Pods-CoinFlowWithMVVM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -592,6 +742,7 @@
 		};
 		182B976D25A1A5F8005BD868 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3F69A2C7DEC928ABAA4339D /* Pods-CoinFlowWithMVVM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -611,6 +762,7 @@
 		};
 		182B976F25A1A5F8005BD868 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9BAFA4FD77A5FB3292AA95F /* Pods-CoinFlowWithMVVMTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -633,6 +785,7 @@
 		};
 		182B977025A1A5F8005BD868 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B41D1FD3891B5B134AF8FE0C /* Pods-CoinFlowWithMVVMTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -655,6 +808,7 @@
 		};
 		182B977225A1A5F8005BD868 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD15080C74F3B4A68C75328F /* Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -675,6 +829,7 @@
 		};
 		182B977325A1A5F8005BD868 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D7580C9893050D6048EBEEF /* Pods-CoinFlowWithMVVM-CoinFlowWithMVVMUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
