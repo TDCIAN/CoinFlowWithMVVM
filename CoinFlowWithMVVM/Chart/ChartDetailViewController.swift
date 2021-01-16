@@ -16,6 +16,9 @@ class ChartDetailViewController: UIViewController {
     @IBOutlet weak var highlightBar: UIView!
     @IBOutlet weak var highlightBarLeading: NSLayoutConstraint!
     
+    @IBOutlet weak var chartView: LineChartView!
+    
+    
     var coinInfo: CoinInfo!
     var chartDatas: [CoinChartInfo] = []
     var selectedPeriod: Period = .day
@@ -74,7 +77,7 @@ extension ChartDetailViewController {
                 dispatchGroup.leave()
                 switch result {
                 case .success(let coinChartDatas):
-    //                print("--> 코인차트데이터: \(coinChartDatas)")
+                    print("--> 코인차트데이터: \(self.chartDatas.count), 피리어드: \(period)")
                     self.chartDatas.append(CoinChartInfo(key: period, value: coinChartDatas))
                 case .failure(let error):
                     print("--> 코인차트데이터에러: \(error.localizedDescription)")
@@ -82,38 +85,33 @@ extension ChartDetailViewController {
             }
         }
         dispatchGroup.notify(queue: .main) {
-            // -> 차트를 렌더한다
+            // update chart
             print("render chart... \(self.chartDatas.count)")
             self.renderChart(with: self.selectedPeriod)
         }
-
-
     }
-    
-
-    
-
     
     private func renderChart(with period: Period) {
         print("rendering... \(period)")
         // 데이터 가져오기
         // 차트에 필요한 차트데이터 가공
         // 차트에 적용
-        
+
         // (1) 데이터 가져오기
         guard let coinChartData = chartDatas.first(where: { $0.key == period })?.value else { return }
-        
+        print("코인차트데이터: \(coinChartData)")
         // (2) 차트에 필요한 차트데이터 가공
         let chartDataEntry = coinChartData.map { chartData -> ChartDataEntry in
             let time = chartData.time
             let price = chartData.closePrice
             return ChartDataEntry(x: time, y: price)
         }
-        
+        print("차트데이터 엔트리: \(chartDataEntry)")
         // (3) 차트에 적용
+        
         // Configure Dataset(how to draw)
         let lineChartDataSet = LineChartDataSet(entries: chartDataEntry, label: "Coin Value")
-        
+        print("라인차트데이터셋: \(lineChartDataSet)")
         // -- draw mode
         lineChartDataSet.mode = .horizontalBezier
         // -- color
@@ -131,7 +129,51 @@ extension ChartDetailViewController {
         // LineChartDataSet, [ChartDataEntry]
         
         let data = LineChartData(dataSet: lineChartDataSet)
-//        chartView.data = data
+        print("데이터: \(data.debugDescription)")
+        chartView.data = data
+
+        // Gradient fill
+        let startColor = UIColor.systemBlue
+        let endColor = UIColor(white: 1, alpha: 0.3)
+        
+        let gradientColors = [startColor.cgColor, endColor.cgColor] as CFArray // Colors of the gradient
+        let colorLocation: [CGFloat] = [1.0, 0.0] // Positioning of the gradient
+        let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: colorLocation) // Gradient Object
+        lineChartDataSet.fill = Fill.fillWithLinearGradient(gradient!, angle: 90.0) // Set the Gradient
+        lineChartDataSet.drawFilledEnabled = true // Draw the Gradient
+        
+        // Axis - xAxis
+        let xAxis = chartView.xAxis
+        xAxis.labelPosition = .bottom
+        xAxis.valueFormatter = xAxisDateFormatter(period: period)
+        xAxis.drawGridLinesEnabled = false
+        xAxis.drawAxisLineEnabled = true
+        xAxis.drawLabelsEnabled = true
+        
+        // Axis - yAxis
+        let leftYAxis = chartView.leftAxis
+        leftYAxis.drawGridLinesEnabled = false
+        leftYAxis.drawAxisLineEnabled = false
+        leftYAxis.drawLabelsEnabled = false
+        
+        let rightYAxis = chartView.rightAxis
+        rightYAxis.drawGridLinesEnabled = false
+        rightYAxis.drawAxisLineEnabled = false
+        rightYAxis.drawLabelsEnabled = false
+        
+        // User Interaction
+        chartView.doubleTapToZoomEnabled = false
+        chartView.dragEnabled = true
+        
+        chartView.delegate = self
+
+        // Chart Description
+        let description = Description()
+        description.text = ""
+        chartView.chartDescription = description
+        
+        let legend = chartView.legend
+        legend.enabled = false
         
     }
 

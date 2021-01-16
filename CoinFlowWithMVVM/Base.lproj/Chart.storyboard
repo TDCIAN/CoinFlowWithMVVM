@@ -330,6 +330,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="6TT-9d-pv4"/>
                     <connections>
+                        <outlet property="chartView" destination="XfF-6V-BPN" id="UKi-ms-pSk"/>
                         <outlet property="coinTypeLabel" destination="FoQ-O4-bnv" id="Vpg-hb-i0T"/>
                         <outlet property="currentPriceLabel" destination="675-WS-0Pp" id="MMF-gd-BWs"/>
                         <outlet property="highlightBar" destination="azK-H2-GrU" id="qLD-GE-uIH"/>
