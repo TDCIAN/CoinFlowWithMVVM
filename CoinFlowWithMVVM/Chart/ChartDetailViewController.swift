@@ -53,9 +53,21 @@ class ChartDetailViewController: UIViewController {
 extension ChartDetailViewController {
     
     private func fetchData() {
+        // 정보를 다 받아온다 (day, week, month, year)
+        // 어느 데이터가 먼저 오는지 알 수가 없다
+        // day는 반드시 먼저 와야된다 -> 그리기 전에 4가지 데이터를 다 갖고 와야 될 것 같다
+        // 그러면, 4개가 언제 다 들어올지 모르는 상황이다
+        // 네 개가 다 들어오고, 그 다음에 차트를 렌더하자
+        
+        // 디스패치 그룹에서 작업들이 시작할 때 해당 그룹에 들어간다(피리어드가 4개니까 네 번 들어감)
+        // 리스폰스가 오는 시점에 그룹에서 떠난다
+        // 다 떠나고 나면 노티파이가 실행된다
+        let dispatchGroup = DispatchGroup()
         
         Period.allCases.forEach { period in
+            dispatchGroup.enter()
             NetworkManager.requestCoinChartData(coinType: coinInfo.key, period: period) { result in
+                dispatchGroup.leave()
                 switch result {
                 case .success(let coinChartDatas):
     //                print("--> 코인차트데이터: \(coinChartDatas)")
@@ -65,7 +77,10 @@ extension ChartDetailViewController {
                 }
             }
         }
-
+        dispatchGroup.notify(queue: .main) {
+            // -> 차트를 렌더한다
+            print("render chart... \(self.chartDatas.count)")
+        }
 
 
     }
