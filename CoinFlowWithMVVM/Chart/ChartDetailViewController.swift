@@ -92,13 +92,51 @@ extension ChartDetailViewController {
     
 
     
-    private func moveHighlightBar(to button: UIButton) {
-        highlightBarLeading.constant = button.frame.minX
-    }
+
     
     private func renderChart(with period: Period) {
-        // 선택된 period로 차트 렌더하기
         print("rendering... \(period)")
+        // 데이터 가져오기
+        // 차트에 필요한 차트데이터 가공
+        // 차트에 적용
+        
+        // (1) 데이터 가져오기
+        guard let coinChartData = chartDatas.first(where: { $0.key == period })?.value else { return }
+        
+        // (2) 차트에 필요한 차트데이터 가공
+        let chartDataEntry = coinChartData.map { chartData -> ChartDataEntry in
+            let time = chartData.time
+            let price = chartData.closePrice
+            return ChartDataEntry(x: time, y: price)
+        }
+        
+        // (3) 차트에 적용
+        // Configure Dataset(how to draw)
+        let lineChartDataSet = LineChartDataSet(entries: chartDataEntry, label: "Coin Value")
+        
+        // -- draw mode
+        lineChartDataSet.mode = .horizontalBezier
+        // -- color
+        lineChartDataSet.colors = [UIColor.systemBlue]
+        // -- draw circle
+        lineChartDataSet.drawCirclesEnabled = false
+        lineChartDataSet.drawCircleHoleEnabled = false
+        // -- draw y value
+        lineChartDataSet.drawValuesEnabled = false
+        // -- highlight when user touch
+        lineChartDataSet.highlightEnabled = true
+        lineChartDataSet.drawHorizontalHighlightIndicatorEnabled = false
+        lineChartDataSet.highlightColor = UIColor.systemBlue
+        
+        // LineChartDataSet, [ChartDataEntry]
+        
+        let data = LineChartData(dataSet: lineChartDataSet)
+//        chartView.data = data
+        
+    }
+
+    private func moveHighlightBar(to button: UIButton) {
+        highlightBarLeading.constant = button.frame.minX
     }
     
     private func updateCoinInfo(_ coinInfo: CoinInfo) {

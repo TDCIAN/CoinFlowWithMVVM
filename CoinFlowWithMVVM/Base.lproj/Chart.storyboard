@@ -236,9 +236,19 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LzE-lh-lw7">
                                 <rect key="frame" x="0.0" y="558" width="414" height="200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XfF-6V-BPN" userLabel="Chart View">
+                                        <rect key="frame" x="20" y="0.0" width="374" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="XfF-6V-BPN" secondAttribute="bottom" id="Hdc-VG-0np"/>
                                     <constraint firstAttribute="height" constant="200" id="PSR-47-zNU"/>
+                                    <constraint firstAttribute="trailing" secondItem="XfF-6V-BPN" secondAttribute="trailing" constant="20" id="aF1-0A-30w"/>
+                                    <constraint firstItem="XfF-6V-BPN" firstAttribute="leading" secondItem="LzE-lh-lw7" secondAttribute="leading" constant="20" id="c3S-gd-wmo"/>
+                                    <constraint firstItem="XfF-6V-BPN" firstAttribute="top" secondItem="LzE-lh-lw7" secondAttribute="top" id="gxc-4J-gmH"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWw-7Q-0RH">
