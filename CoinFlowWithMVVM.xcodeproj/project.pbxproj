@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,7 @@
 		18A4AEBB25A34B5F0098507C /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A4AEB925A34B5F0098507C /* Chart.storyboard */; };
 		18A4AEC025A34B750098507C /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A4AEBF25A34B750098507C /* News.storyboard */; };
 		18A4AEC625A34B880098507C /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A4AEC425A34B880098507C /* Setting.storyboard */; };
+		18CBDE9325B2C3460037365A /* ChartXAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CBDE9225B2C3460037365A /* ChartXAxisValueFormatter.swift */; };
 		18DCBC1C25A5ED1B00F11E10 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DCBC1B25A5ED1B00F11E10 /* UIColor.swift */; };
 		18EA68BD25ADFB6A00F24759 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA68BC25ADFB6A00F24759 /* EndPoint.swift */; };
 		18EA68C225ADFB7900F24759 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA68C125ADFB7900F24759 /* Request.swift */; };
@@ -83,6 +84,7 @@
 		18A4AEBA25A34B5F0098507C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CoinFlowWithMVVM/Base.lproj/Chart.storyboard; sourceTree = SOURCE_ROOT; };
 		18A4AEBF25A34B750098507C /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = SOURCE_ROOT; };
 		18A4AEC525A34B880098507C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CoinFlowWithMVVM/Base.lproj/Setting.storyboard; sourceTree = SOURCE_ROOT; };
+		18CBDE9225B2C3460037365A /* ChartXAxisValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartXAxisValueFormatter.swift; sourceTree = "<group>"; };
 		18DCBC1B25A5ED1B00F11E10 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		18E169FB25B037BD0040DC70 /* ZipPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ZipPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		18EA68BC25ADFB6A00F24759 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				182B977725A1AA25005BD868 /* ChartListViewController.swift */,
 				182B978925A1AA98005BD868 /* ChartDetailViewController.swift */,
 				188075DD25B184F3008D5705 /* ChartListCell.swift */,
+				18CBDE9225B2C3460037365A /* ChartXAxisValueFormatter.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -261,7 +264,6 @@
 				A9BAFA4FD77A5FB3292AA95F /* Pods-CoinFlowWithMVVMTests.debug.xcconfig */,
 				B41D1FD3891B5B134AF8FE0C /* Pods-CoinFlowWithMVVMTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -516,6 +518,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CBDE9325B2C3460037365A /* ChartXAxisValueFormatter.swift in Sources */,
 				188075DE25B184F3008D5705 /* ChartListCell.swift in Sources */,
 				182B978A25A1AA98005BD868 /* ChartDetailViewController.swift in Sources */,
 				18EA68C225ADFB7900F24759 /* Request.swift in Sources */,
