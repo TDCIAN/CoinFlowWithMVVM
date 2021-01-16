@@ -90,10 +90,7 @@ extension ChartDetailViewController {
 
     }
     
-    private func updateCoinInfo(_ coinInfo: CoinInfo) {
-        coinTypeLabel.text = "\(coinInfo.key)"
-        currentPriceLabel.text = String(format: "%.1f", coinInfo.value.usd.price)
-    }
+
     
     private func moveHighlightBar(to button: UIButton) {
         highlightBarLeading.constant = button.frame.minX
@@ -102,5 +99,28 @@ extension ChartDetailViewController {
     private func renderChart(with period: Period) {
         // 선택된 period로 차트 렌더하기
         print("rendering... \(period)")
+    }
+    
+    private func updateCoinInfo(_ coinInfo: CoinInfo) {
+        coinTypeLabel.text = "\(coinInfo.key)"
+        currentPriceLabel.text = String(format: "%.1f", coinInfo.value.usd.price)
+    }
+}
+
+extension ChartDetailViewController {
+    private func xAxisDateFormatter(period: Period) -> IAxisValueFormatter {
+        switch period {
+        case .day: return ChartXAxisDayFormatter()
+        case .week: return ChartXAxisWeekFormatter()
+        case .month: return ChartXAxisMonthFormatter()
+        case .year: return ChartXAxisYearFormatter()
+        }
+    }
+}
+
+extension ChartDetailViewController: ChartViewDelegate {
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        print(#function, entry.x, entry.y, highlight)
+        currentPriceLabel.text = String(format: "%.1f", entry.y)
     }
 }
