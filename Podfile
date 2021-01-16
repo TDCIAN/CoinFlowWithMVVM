@@ -7,9 +7,9 @@ target 'CoinFlowWithMVVM' do
   use_frameworks!
 
   # Pods for CoinFlowWithMVVM
-
 pod 'Charts'
 pod 'Alamofire', '~> 5.2'
+
   target 'CoinFlowWithMVVMTests' do
     inherit! :search_paths
     # Pods for testing

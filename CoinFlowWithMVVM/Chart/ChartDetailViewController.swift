@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Charts
 
 typealias CoinChartInfo = (key: Period, value: [ChartData])
 
