@@ -54,8 +54,7 @@ extension ChartDetailViewController {
     
     private func fetchData() {
         
-        let periodUnits: [Period] = [.day, .month, .week, .year]
-        periodUnits.forEach { period in
+        Period.allCases.forEach { period in
             NetworkManager.requestCoinChartData(coinType: coinInfo.key, period: period) { result in
                 switch result {
                 case .success(let coinChartDatas):
@@ -66,6 +65,9 @@ extension ChartDetailViewController {
                 }
             }
         }
+
+
+
     }
     
     private func updateCoinInfo(_ coinInfo: CoinInfo) {
