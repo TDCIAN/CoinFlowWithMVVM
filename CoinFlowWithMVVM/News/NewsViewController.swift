@@ -9,25 +9,32 @@ import UIKit
 
 class NewsViewController: UIViewController {
     
-    var articles: [Article] = []
-
+    @IBOutlet weak var newsTableView: UITableView!
+    
+    var articles: [Article] = [] {
+        didSet {
+            newsTableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
         NetworkManager.requestNewsList { result in
             switch result {
             case .success(let articles):
+                self.articles = articles
                 print("뉴스리스트 --> \(articles.count)")
             case .failure(let error):
                 print("뉴스리스트 에러 --> \(error.localizedDescription)")
             }
             
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
     }
 }
 

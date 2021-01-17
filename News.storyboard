@@ -80,6 +80,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="News" id="DEP-ug-LvB"/>
+                    <connections>
+                        <outlet property="newsTableView" destination="Cbl-Ch-wzp" id="KnZ-WJ-svf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dY-Hb-vcR" sceneMemberID="firstResponder"/>
             </objects>
