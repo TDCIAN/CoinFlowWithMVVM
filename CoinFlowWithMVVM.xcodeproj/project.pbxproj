@@ -24,6 +24,7 @@
 		183C9F5025ACB06C0055F6A2 /* CoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C9F4F25ACB06C0055F6A2 /* CoinData.swift */; };
 		183C9F5625ACB3650055F6A2 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C9F5525ACB3650055F6A2 /* NetworkManager.swift */; };
 		188075DE25B184F3008D5705 /* ChartListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188075DD25B184F3008D5705 /* ChartListCell.swift */; };
+		1887942925B4963700C74A46 /* NewsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887942825B4963700C74A46 /* NewsListCell.swift */; };
 		18A4AEBB25A34B5F0098507C /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A4AEB925A34B5F0098507C /* Chart.storyboard */; };
 		18A4AEC025A34B750098507C /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A4AEBF25A34B750098507C /* News.storyboard */; };
 		18A4AEC625A34B880098507C /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18A4AEC425A34B880098507C /* Setting.storyboard */; };
@@ -81,6 +82,7 @@
 		183C9F4F25ACB06C0055F6A2 /* CoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinData.swift; sourceTree = "<group>"; };
 		183C9F5525ACB3650055F6A2 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		188075DD25B184F3008D5705 /* ChartListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartListCell.swift; sourceTree = "<group>"; };
+		1887942825B4963700C74A46 /* NewsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListCell.swift; sourceTree = "<group>"; };
 		18A4AEBA25A34B5F0098507C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CoinFlowWithMVVM/Base.lproj/Chart.storyboard; sourceTree = SOURCE_ROOT; };
 		18A4AEBF25A34B750098507C /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = SOURCE_ROOT; };
 		18A4AEC525A34B880098507C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CoinFlowWithMVVM/Base.lproj/Setting.storyboard; sourceTree = SOURCE_ROOT; };
@@ -206,6 +208,7 @@
 			children = (
 				18A4AEBF25A34B750098507C /* News.storyboard */,
 				182B977C25A1AA31005BD868 /* NewsViewController.swift */,
+				1887942825B4963700C74A46 /* NewsListCell.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				18EA68C225ADFB7900F24759 /* Request.swift in Sources */,
 				18DCBC1C25A5ED1B00F11E10 /* UIColor.swift in Sources */,
 				183C9F5025ACB06C0055F6A2 /* CoinData.swift in Sources */,
+				1887942925B4963700C74A46 /* NewsListCell.swift in Sources */,
 				182B977825A1AA25005BD868 /* ChartListViewController.swift in Sources */,
 				18EA68CC25AE00CB00F24759 /* CoinChartDataRequest.swift in Sources */,
 				183C9F5625ACB3650055F6A2 /* NetworkManager.swift in Sources */,
