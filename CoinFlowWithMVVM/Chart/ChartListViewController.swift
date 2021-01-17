@@ -15,7 +15,7 @@ class ChartListViewController: UIViewController {
     @IBOutlet weak var chartTableView: UITableView!
     @IBOutlet weak var chartTableViewHeight: NSLayoutConstraint!
 
-    var coinInfoList: [CoinInfo] = [] {
+    var coinInfoList: [(CoinType, Coin)] = [] {
         didSet {
             // data 세팅이 되었을 때 무엇을 해야 하는가?
             // -> 테이블뷰 리로드 시키기
@@ -35,7 +35,7 @@ class ChartListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        NetworkManager.requestCoinList { result in
+        NetworkManager.requestCoinList { (result: Result<[Coin], Error>) in
 
             switch result {
             case .success(let coins):
@@ -76,9 +76,10 @@ extension ChartListViewController {
     
     private func showDetail(coinInfo: CoinInfo) {
         let storyboard = UIStoryboard(name: "Chart", bundle: .main)
-        if let detailVC = storyboard.instantiateViewController(withIdentifier: "ChartDetailViewController") as? ChartDetailViewController {
-            detailVC.coinInfo = coinInfo
-            navigationController?.pushViewController(detailVC, animated: true)
+        let detailVC = storyboard.instantiateViewController(identifier: "ChartDetailViewController")
+        if let coinDetailVC = detailVC as? ChartDetailViewController {
+            coinDetailVC.coinInfo = coinInfo
+            navigationController?.pushViewController(coinDetailVC, animated: true)
         }
         
     }
@@ -107,7 +108,10 @@ extension ChartListViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width: CGFloat = collectionView.bounds.width - 20 * 2 - 15
+        let leading: CGFloat = 20
+        let interItemSpacing: CGFloat = 15
+        
+        let width: CGFloat = collectionView.bounds.width - leading * 2 - interItemSpacing
         let height: CGFloat = 200
         
         return CGSize(width: width, height: height)

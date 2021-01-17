@@ -19,38 +19,39 @@ enum HTTPMethod: String {
     }
 }
 
+enum NetworError: Error {
+    case invalidURL
+    case notFound
+}
+
 enum RequestParam {
-    case url([String: String])
     case body([String: String])
+    case url([String: String])
 }
 
 protocol Request {
     var path: String { get }
     var method: HTTPMethod { get }
-    var params: RequestParam { get}
+    var params: RequestParam { get }
     var format: String? { get }
     var headers: [String]? { get }
 }
 
 extension Request {
     var method: HTTPMethod { return .get }
-    var format: String? { return "application/json"}
-    var headers: [String]? { return ["Content-Type", "Accept"]}
+    var format: String? { return "application/json" }
+    var headers: [String]? { return ["Content-Type", "Accept"] }
     
-    // Request 해야하는 목표 -> URL 만들어 내기
-    func urlRequest() -> URLRequest {
+    func urlRequest() -> URLRequest? {
         let url = URL(string: path)!
         var request = URLRequest(url: url)
-        
-        // http method
+        // method
         request.httpMethod = method.name
-        
         // header
         headers?.forEach { headerField in
             request.setValue(format, forHTTPHeaderField: headerField)
         }
-        
-        // config param
+        // params
         switch params {
         case .body(let params):
             let bodyData = try? JSONSerialization.data(withJSONObject: params, options: [])
@@ -63,7 +64,6 @@ extension Request {
             components?.queryItems = queryParams
             request.url = components?.url
         }
-        
         return request
     }
 }

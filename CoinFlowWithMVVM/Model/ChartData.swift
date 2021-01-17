@@ -24,3 +24,4 @@ struct ChartData: Codable {
         case closePrice = "close"
     }
 }
+

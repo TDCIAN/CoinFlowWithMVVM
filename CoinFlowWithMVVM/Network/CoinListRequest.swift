@@ -16,5 +16,3 @@ struct CoinListRequest: Request {
         self.params = param
     }
 }
-
-let request = CoinListRequest(param: .url(["fsym":"BTC"]))
