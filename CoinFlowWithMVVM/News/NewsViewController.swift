@@ -13,7 +13,9 @@ class NewsViewController: UIViewController {
     
     var articles: [Article] = [] {
         didSet {
-            newsTableView.reloadData()
+            DispatchQueue.main.async {
+                self.newsTableView.reloadData()
+            }
         }
     }
     
@@ -40,17 +42,15 @@ class NewsViewController: UIViewController {
 
 extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 15
+        return articles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsListCell", for: indexPath) as? NewsListCell else {
             return UITableViewCell()
         }
-        cell.backgroundColor = UIColor.randomColor()
         
         let article = articles[indexPath.row]
-        
         cell.configCell(article: article)
         return cell
     }
