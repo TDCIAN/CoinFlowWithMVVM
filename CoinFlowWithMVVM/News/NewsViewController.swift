@@ -13,27 +13,19 @@ class NewsViewController: UIViewController {
     
     @IBOutlet weak var newsTableView: UITableView!
     
-    var articles: [Article] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.newsTableView.reloadData()
-            }
-        }
-    }
+    var viewModel: NewsListViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NetworkManager.requestNewsList { result in
-            switch result {
-            case .success(let articles):
-                self.articles = articles
-                print("뉴스리스트 --> \(articles.count)")
-            case .failure(let error):
-                print("뉴스리스트 에러 --> \(error.localizedDescription)")
+        viewModel = NewsListViewModel(changeHandler: { articles in
+            DispatchQueue.main.async {
+                self.newsTableView.reloadData()
             }
-            
-        }
+        })
+        
+        viewModel.fetchData()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -44,16 +36,11 @@ class NewsViewController: UIViewController {
 
 extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles.count
+        return viewModel.numberOfRowsInsection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsListCell", for: indexPath) as? NewsListCell else {
-            return UITableViewCell()
-        }
-        
-        let article = articles[indexPath.row]
-        cell.configCell(article: article)
+        let cell = viewModel.cell(for: indexPath, at: tableView)
         return cell
     }
     
@@ -62,7 +49,8 @@ extension NewsViewController: UITableViewDataSource {
 
 extension NewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let article = articles[indexPath.row]
+        
+        let article = viewModel.article(at: indexPath)
         guard  let articleURL = URL(string: article.link) else { return }
         
         let config = SFSafariViewController.Configuration()
@@ -77,3 +65,51 @@ extension NewsViewController: UITableViewDelegate {
 }
 
 
+class NewsListViewModel {
+    
+    typealias Handler = ([Article]) -> Void
+    
+    var changeHandler: Handler
+    
+    var articles: [Article] = [] {
+        didSet {
+            changeHandler(articles)
+        }
+    }
+    
+    init(changeHandler: @escaping Handler) {
+        self.changeHandler = changeHandler
+    }
+}
+
+extension NewsListViewModel {
+    func fetchData() {
+        NetworkManager.requestNewsList { (result: Result<[Article], Error>) in
+            switch result {
+            case .success(let articles):
+                self.articles = articles
+            case .failure(let error):
+                print("--> News List Error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    var numberOfRowsInsection: Int {
+        return articles.count
+    }
+    
+    func cell(for indexPath: IndexPath, at tableView: UITableView) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsListCell", for: indexPath) as? NewsListCell else {
+            return UITableViewCell()
+        }
+        
+        let article = articles[indexPath.row]
+        cell.configCell(article: article)
+        return cell
+    }
+    
+    func article(at indexPath: IndexPath) -> Article {
+        let article = articles[indexPath.row]
+        return article
+    }
+}
