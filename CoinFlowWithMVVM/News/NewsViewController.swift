@@ -48,6 +48,10 @@ extension NewsViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         cell.backgroundColor = UIColor.randomColor()
+        
+        let article = articles[indexPath.row]
+        
+        cell.configCell(article: article)
         return cell
     }
     
@@ -59,4 +63,12 @@ class NewsListCell: UITableViewCell {
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var newsTitle: UILabel!
     @IBOutlet weak var newsDate: UILabel!
+    
+    func configCell(article: Article) {
+        article.link
+        newsTitle.text = article.title
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        newsDate.text = formatter.string(from: Date(timeIntervalSince1970: article.timestamp))
+    }
 }
