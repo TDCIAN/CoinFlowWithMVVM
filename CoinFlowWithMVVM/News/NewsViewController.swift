@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class NewsViewController: UIViewController {
     
@@ -65,7 +66,9 @@ class NewsListCell: UITableViewCell {
     @IBOutlet weak var newsDate: UILabel!
     
     func configCell(article: Article) {
-        article.link
+        
+        let url = URL(string: article.imageURL)
+        thumbnail.kf.setImage(with: url)
         newsTitle.text = article.title
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
