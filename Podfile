@@ -9,6 +9,7 @@ target 'CoinFlowWithMVVM' do
   # Pods for CoinFlowWithMVVM
 pod 'Charts'
 pod 'Alamofire', '~> 5.2'
+pod 'Kingfisher', '~> 5.0'
 
   target 'CoinFlowWithMVVMTests' do
     inherit! :search_paths
