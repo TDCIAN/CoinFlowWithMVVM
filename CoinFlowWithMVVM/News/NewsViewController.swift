@@ -8,6 +8,8 @@
 import UIKit
 
 class NewsViewController: UIViewController {
+    
+    var articles: [Article] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,4 +49,7 @@ extension NewsViewController: UITableViewDataSource {
 
 class NewsListCell: UITableViewCell {
     
+    @IBOutlet weak var thumbnail: UIImageView!
+    @IBOutlet weak var newsTitle: UILabel!
+    @IBOutlet weak var newsDate: UILabel!
 }

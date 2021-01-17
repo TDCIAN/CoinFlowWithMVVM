@@ -57,6 +57,11 @@
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IcN-LX-c0v" secondAttribute="trailing" constant="30" id="e96-hn-9Uf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="newsDate" destination="iEm-eh-0Ms" id="mcT-ga-IoR"/>
+                                            <outlet property="newsTitle" destination="IcN-LX-c0v" id="VnB-7I-fFm"/>
+                                            <outlet property="thumbnail" destination="uGa-hh-RsS" id="anV-Vr-UIg"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
