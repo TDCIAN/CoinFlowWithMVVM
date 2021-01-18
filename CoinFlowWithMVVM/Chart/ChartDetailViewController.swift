@@ -27,58 +27,79 @@ class ChartDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        updateCoinInfo(coinInfo)
+
         updateCoinInfo(viewModel)
-        fetchData()
+        // -> changeHandler에 대한 업데이트
+        viewModel.updateNotify { (chartDatas, selectedPeriod) in
+            self.renderChart(with: chartDatas, period: selectedPeriod)
+        }
+        
+        viewModel.fetchData()
     }
     
     @IBAction func dailyButtonTapped(_ sender: UIButton) {
-        renderChart(with: .day)
+//        renderChart(with: .day)
+        viewModel.selectedPeriod = .day
+        let datas = viewModel.chartDatas
+        let selectedPeriod = viewModel.selectedPeriod
+        renderChart(with: datas, period: selectedPeriod)
         moveHighlightBar(to: sender)
     }
     
     @IBAction func weeklyButtonTapped(_ sender: UIButton) {
-        renderChart(with: .week)
+//        renderChart(with: .week)
+        viewModel.selectedPeriod = .week
+        let datas = viewModel.chartDatas
+        let selectedPeriod = viewModel.selectedPeriod
+        renderChart(with: datas, period: selectedPeriod)
         moveHighlightBar(to: sender)
     }
     
     @IBAction func monthlyButtonTapped(_ sender: UIButton) {
-        renderChart(with: .month)
+//        renderChart(with: .month)
+        viewModel.selectedPeriod = .month
+        let datas = viewModel.chartDatas
+        let selectedPeriod = viewModel.selectedPeriod
+        renderChart(with: datas, period: selectedPeriod)
         moveHighlightBar(to: sender)
     }
     
     @IBAction func yearlyButtonTapped(_ sender: UIButton) {
-        renderChart(with: .year)
+//        renderChart(with: .year)
+        viewModel.selectedPeriod = .year
+        let datas = viewModel.chartDatas
+        let selectedPeriod = viewModel.selectedPeriod
+        renderChart(with: datas, period: selectedPeriod)
         moveHighlightBar(to: sender)
     }
 }
 
 extension ChartDetailViewController {
-    private func fetchData() {
-        let dispatchGroup = DispatchGroup()
-        Period.allCases.forEach { period in
-            dispatchGroup.enter()
-            NetworkManager.requestCoinChartData(coinType: coinInfo.key, period: period) { (result: Result<[ChartData], Error>) in
-                dispatchGroup.leave()
-                switch result {
-                case .success(let chartDatas):
-                    self.chartDatas.append(CoinChartInfo(key: period, value: chartDatas))
-                    print("--> success:\(chartDatas.count), \(period)")
-                case .failure(let error):
-                    print("--> err: \(error.localizedDescription)")
-                }
-            }
-        }
-        
-        dispatchGroup.notify(queue: .main) {
-            // update chart
-            print("update chart")
-            // render chart view
-            self.renderChart(with: self.selectedPeriod)
-        }
-    }
+//    private func fetchData() {
+//        let dispatchGroup = DispatchGroup()
+//        Period.allCases.forEach { period in
+//            dispatchGroup.enter()
+//            NetworkManager.requestCoinChartData(coinType: coinInfo.key, period: period) { (result: Result<[ChartData], Error>) in
+//                dispatchGroup.leave()
+//                switch result {
+//                case .success(let chartDatas):
+//                    self.chartDatas.append(CoinChartInfo(key: period, value: chartDatas))
+//                    print("--> success:\(chartDatas.count), \(period)")
+//                case .failure(let error):
+//                    print("--> err: \(error.localizedDescription)")
+//                }
+//            }
+//        }
+//
+//        dispatchGroup.notify(queue: .main) {
+//            // update chart
+//            print("update chart")
+//            // render chart view
+//            self.renderChart(with: self.selectedPeriod)
+//        }
+//    }
     
-    private func renderChart(with period: Period) {
+    private func renderChart(with chartDatas: [CoinChartInfo], period: Period) {
         print("rendering... \(period) ")
         // 데이터 가져오기
         // 차트에 필요한 차트데이터 가공
@@ -231,5 +252,32 @@ class ChartDetailViewModel {
 }
 
 extension ChartDetailViewModel {
+    func fetchData() {
+        let dispatchGroup = DispatchGroup()
+        Period.allCases.forEach { period in
+            dispatchGroup.enter()
+            NetworkManager.requestCoinChartData(coinType: coinInfo.key, period: period) { (result: Result<[ChartData], Error>) in
+                dispatchGroup.leave()
+                switch result {
+                case .success(let chartDatas):
+                    self.chartDatas.append(CoinChartInfo(key: period, value: chartDatas))
+                    print("--> success:\(chartDatas.count), \(period)")
+                case .failure(let error):
+                    print("--> err: \(error.localizedDescription)")
+                }
+            }
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            // update chart
+            print("update chart")
+            // render chart view
+//            self.renderChart(with: self.selectedPeriod)
+            self.changeHandler(self.chartDatas, self.selectedPeriod)
+        }
+    }
     
+    func updateNotify(handler: @escaping Handler) {
+        self.changeHandler = handler
+    }
 }

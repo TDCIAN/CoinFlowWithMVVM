@@ -78,7 +78,10 @@ extension ChartListViewController {
         let storyboard = UIStoryboard(name: "Chart", bundle: .main)
         let detailVC = storyboard.instantiateViewController(identifier: "ChartDetailViewController")
         if let coinDetailVC = detailVC as? ChartDetailViewController {
-            coinDetailVC.coinInfo = coinInfo
+//            coinDetailVC.coinInfo = coinInfo
+            
+            coinDetailVC.viewModel = ChartDetailViewModel(coinInfo: coinInfo, chartDatas: [], selectedPeriod: .day, changeHandler: { _, _ in
+            })
             navigationController?.pushViewController(coinDetailVC, animated: true)
         }
         
