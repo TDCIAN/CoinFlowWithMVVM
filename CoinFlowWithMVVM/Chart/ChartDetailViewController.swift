@@ -11,10 +11,6 @@ import Charts
 typealias CoinChartInfo = (key: Period, value: [ChartData])
 
 class ChartDetailViewController: UIViewController {
-
-//    var coinInfo: CoinInfo!
-//    var chartDatas: [CoinChartInfo] = []
-//    var selectedPeriod: Period = .day
     
     @IBOutlet weak var coinTypeLabel: UILabel!
     @IBOutlet weak var currentPriceLabel: UILabel!
@@ -38,7 +34,6 @@ class ChartDetailViewController: UIViewController {
     }
     
     @IBAction func dailyButtonTapped(_ sender: UIButton) {
-//        renderChart(with: .day)
         viewModel.selectedPeriod = .day
         let datas = viewModel.chartDatas
         let selectedPeriod = viewModel.selectedPeriod
@@ -47,7 +42,6 @@ class ChartDetailViewController: UIViewController {
     }
     
     @IBAction func weeklyButtonTapped(_ sender: UIButton) {
-//        renderChart(with: .week)
         viewModel.selectedPeriod = .week
         let datas = viewModel.chartDatas
         let selectedPeriod = viewModel.selectedPeriod
@@ -75,29 +69,6 @@ class ChartDetailViewController: UIViewController {
 }
 
 extension ChartDetailViewController {
-//    private func fetchData() {
-//        let dispatchGroup = DispatchGroup()
-//        Period.allCases.forEach { period in
-//            dispatchGroup.enter()
-//            NetworkManager.requestCoinChartData(coinType: coinInfo.key, period: period) { (result: Result<[ChartData], Error>) in
-//                dispatchGroup.leave()
-//                switch result {
-//                case .success(let chartDatas):
-//                    self.chartDatas.append(CoinChartInfo(key: period, value: chartDatas))
-//                    print("--> success:\(chartDatas.count), \(period)")
-//                case .failure(let error):
-//                    print("--> err: \(error.localizedDescription)")
-//                }
-//            }
-//        }
-//
-//        dispatchGroup.notify(queue: .main) {
-//            // update chart
-//            print("update chart")
-//            // render chart view
-//            self.renderChart(with: self.selectedPeriod)
-//        }
-//    }
     
     private func renderChart(with chartDatas: [CoinChartInfo], period: Period) {
         print("rendering... \(period) ")
@@ -185,31 +156,13 @@ extension ChartDetailViewController {
         let legend = chartView.legend
         legend.enabled = false
         
-//        // Highest, Lowest Value
-//        if let max = chartView.data?.yMax {
-//            highestValue.text = "max. \(max.stringFormat)"
-//        } else {
-//            highestValue.text = ""
-//        }
-//
-//        if let min = chartView.data?.yMin {
-//            lowestValue.text = "min. \(min.stringFormat)"
-//        } else {
-//            lowestValue.text = ""
-//        }
-        
     } // MARK: 여기까지 렌더차트
     
     private func moveHighlightBar(to button: UIButton) {
         print("--> \(button.frame.minX)")
         highlightBarLeading.constant = button.frame.minX
     }
-    
-//    private func updateCoinInfo(_ info: CoinInfo) {
-//        coinTypeLabel.text = "\(info.key)"
-//        currentPriceLabel.text = String(format: "%.1f", info.value.usd.price)
-//    }
-    
+
     private func updateCoinInfo(_ viewModel: ChartDetailViewModel) {
         coinTypeLabel.text = "\(viewModel.coinInfo.key)"
         currentPriceLabel.text = String(format: "%.1f", viewModel.coinInfo.value.usd.price)
@@ -235,49 +188,3 @@ extension ChartDetailViewController: ChartViewDelegate {
 }
 
 
-class ChartDetailViewModel {
-    typealias Handler = ([CoinChartInfo], Period) -> Void
-    var changeHandler: Handler
-        
-    var coinInfo: CoinInfo!
-    var chartDatas: [CoinChartInfo] = []
-    var selectedPeriod: Period = .day
-    
-    init(coinInfo: CoinInfo, chartDatas: [CoinChartInfo], selectedPeriod: Period, changeHandler: @escaping Handler) {
-        self.coinInfo = coinInfo
-        self.chartDatas = chartDatas
-        self.selectedPeriod = selectedPeriod
-        self.changeHandler = changeHandler
-    }
-}
-
-extension ChartDetailViewModel {
-    func fetchData() {
-        let dispatchGroup = DispatchGroup()
-        Period.allCases.forEach { period in
-            dispatchGroup.enter()
-            NetworkManager.requestCoinChartData(coinType: coinInfo.key, period: period) { (result: Result<[ChartData], Error>) in
-                dispatchGroup.leave()
-                switch result {
-                case .success(let chartDatas):
-                    self.chartDatas.append(CoinChartInfo(key: period, value: chartDatas))
-                    print("--> success:\(chartDatas.count), \(period)")
-                case .failure(let error):
-                    print("--> err: \(error.localizedDescription)")
-                }
-            }
-        }
-        
-        dispatchGroup.notify(queue: .main) {
-            // update chart
-            print("update chart")
-            // render chart view
-//            self.renderChart(with: self.selectedPeriod)
-            self.changeHandler(self.chartDatas, self.selectedPeriod)
-        }
-    }
-    
-    func updateNotify(handler: @escaping Handler) {
-        self.changeHandler = handler
-    }
-}
