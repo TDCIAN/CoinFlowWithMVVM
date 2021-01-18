@@ -65,20 +65,5 @@ extension NewsViewController: UITableViewDelegate {
 }
 
 
-class NewsListViewModel {
-    
-    typealias Handler = ([Article]) -> Void
-    
-    var changeHandler: Handler
-    
-    var articles: [Article] = [] {
-        didSet {
-            changeHandler(articles)
-        }
-    }
-    
-    init(changeHandler: @escaping Handler) {
-        self.changeHandler = changeHandler
-    }
-}
+
 

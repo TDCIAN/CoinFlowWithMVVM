@@ -12,9 +12,9 @@ typealias CoinChartInfo = (key: Period, value: [ChartData])
 
 class ChartDetailViewController: UIViewController {
 
-    var coinInfo: CoinInfo!
-    var chartDatas: [CoinChartInfo] = []
-    var selectedPeriod: Period = .day
+//    var coinInfo: CoinInfo!
+//    var chartDatas: [CoinChartInfo] = []
+//    var selectedPeriod: Period = .day
     
     @IBOutlet weak var coinTypeLabel: UILabel!
     @IBOutlet weak var currentPriceLabel: UILabel!
@@ -23,10 +23,12 @@ class ChartDetailViewController: UIViewController {
     
     @IBOutlet weak var chartView: LineChartView!
     
+    var viewModel: ChartDetailViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateCoinInfo(coinInfo)
+//        updateCoinInfo(coinInfo)
+        updateCoinInfo(viewModel)
         fetchData()
     }
     
@@ -182,9 +184,14 @@ extension ChartDetailViewController {
         highlightBarLeading.constant = button.frame.minX
     }
     
-    private func updateCoinInfo(_ info: CoinInfo) {
-        coinTypeLabel.text = "\(info.key)"
-        currentPriceLabel.text = String(format: "%.1f", info.value.usd.price)
+//    private func updateCoinInfo(_ info: CoinInfo) {
+//        coinTypeLabel.text = "\(info.key)"
+//        currentPriceLabel.text = String(format: "%.1f", info.value.usd.price)
+//    }
+    
+    private func updateCoinInfo(_ viewModel: ChartDetailViewModel) {
+        coinTypeLabel.text = "\(viewModel.coinInfo.key)"
+        currentPriceLabel.text = String(format: "%.1f", viewModel.coinInfo.value.usd.price)
     }
 }
 
@@ -204,4 +211,25 @@ extension ChartDetailViewController: ChartViewDelegate {
         print(#function, entry.x, entry.y, highlight)
         currentPriceLabel.text = String(format: "%.1f", entry.y)
     }
+}
+
+
+class ChartDetailViewModel {
+    typealias Handler = ([CoinChartInfo], Period) -> Void
+    var changeHandler: Handler
+        
+    var coinInfo: CoinInfo!
+    var chartDatas: [CoinChartInfo] = []
+    var selectedPeriod: Period = .day
+    
+    init(coinInfo: CoinInfo, chartDatas: [CoinChartInfo], selectedPeriod: Period, changeHandler: @escaping Handler) {
+        self.coinInfo = coinInfo
+        self.chartDatas = chartDatas
+        self.selectedPeriod = selectedPeriod
+        self.changeHandler = changeHandler
+    }
+}
+
+extension ChartDetailViewModel {
+    
 }
