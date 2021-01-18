@@ -50,7 +50,6 @@ class ChartDetailViewController: UIViewController {
     }
     
     @IBAction func monthlyButtonTapped(_ sender: UIButton) {
-//        renderChart(with: .month)
         viewModel.selectedPeriod = .month
         let datas = viewModel.chartDatas
         let selectedPeriod = viewModel.selectedPeriod
@@ -59,7 +58,6 @@ class ChartDetailViewController: UIViewController {
     }
     
     @IBAction func yearlyButtonTapped(_ sender: UIButton) {
-//        renderChart(with: .year)
         viewModel.selectedPeriod = .year
         let datas = viewModel.chartDatas
         let selectedPeriod = viewModel.selectedPeriod
@@ -81,13 +79,13 @@ extension ChartDetailViewController {
         guard let coinChartData = chartDatas.first(where: { $0.key == period })?.value else { return }
         // 차트에 필요한 차트데이터 가공
         
-        print("코인차트데이터: \(coinChartData)")
+//        print("코인차트데이터: \(coinChartData)")
         let chartDataEntry = coinChartData.map { chartData -> ChartDataEntry in
             let time = chartData.time
             let price = chartData.closePrice
             return ChartDataEntry(x: time, y: price)
         }
-        print("차트데이터 엔트리: \(chartDataEntry)")
+//        print("차트데이터 엔트리: \(chartDataEntry)")
         // 차트에 적용
         
         // Configure Dataset(how to draw)
@@ -144,7 +142,7 @@ extension ChartDetailViewController {
         // User InterAction
         chartView.doubleTapToZoomEnabled = false
         chartView.dragEnabled = true
-        
+
         chartView.delegate = self
 
         // Chart Description
@@ -159,7 +157,7 @@ extension ChartDetailViewController {
     } // MARK: 여기까지 렌더차트
     
     private func moveHighlightBar(to button: UIButton) {
-        print("--> \(button.frame.minX)")
+        print("--> 무브하이라이트바: \(button.frame.minX)")
         highlightBarLeading.constant = button.frame.minX
     }
 
